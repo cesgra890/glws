@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Folding Loader Animated SVG / Animated with Raphaël JavaScript Library</title>
+  <link rel="stylesheet" href="readme-files/css/style.css" />
+</head>
+<body>
+
+<div class="header-c">
+<div class="header">
+  <img src="readme-files/img/144px.png" alt="" class="left" />
+  <h1>Folding Loader Animated SVG</h1>
+  <h3>Animated with Raphaël JavaScript Library</h3>
+</div>
+</div>
+
+<div class="main">
+<!-- section -->
+<div class="toc">
+  <p><a href="#description">Description</a></p>
+  <p><a href="#resize-svg">How to resize animated SVG element</a></p>
+  <p><a href="#resize-text">How to resize text elements</a></p>
+  <p><a href="#js-variables">Javascript variables explained</a></p>
+  <p><a href="#notes">Notes</a></p>
+
+</div>
+
+
+
+
+<!-- section -->
+<div class="description">
+<h2 id="description">Description</h2>
+<p>Folding Loader SVG animation made Raphaël JavaScript Library. For page preloaders, content loaders, process indicators.</p>
+
+<ul>
+  <li>Javascript based animation</li>
+	<li>17 examples, 13 ready-to-use SVG shapes</li>
+  <li>Resolution independent and cross-browser vector graphics</li>
+  <li>Easy to change animation speed, colors, resize the element</li>
+  <li>Browsers supported: Firefox 3+, Safari 3+, Chrome 5+, Opera 9.5+ and IE 6+</li>
+	<li>Mobile friendly</li>
+</ul>
+</div>
+
+
+
+
+
+<!-- section -->
+<h2 id="resize-svg">How to resize animated SVG element</h2>
+
+<p>Width and height properties are defined with CSS. Defaul values are <code>100px</code> for both.</p>
+<ol>
+  <li>Open <code>loader-style.css</code> file in your favorite code editor</li>
+	<li>Search for <code>.loader svg</code> selector</li>
+	<li>Changed the values (in pixels)</li>
+  <li>Save the file.</li>
+</ol>
+
+
+
+
+<!-- section -->
+<h2 id="resize-text">How to resize text elements</h2>
+<ol>
+  <li>Open <code>loader-style.css</code> file in your favorite code editor</li>
+	<li>Search for <code>.loader-text h2</code> and <code>.loader-text p</code> selectors</li>
+	<li>Changed the values (in pixels)</li>
+  <li>Save the file.</li>
+</ol>
+
+
+
+
+<!-- section -->
+<h2 id="js-variables">Javascript variables explained</h2>
+
+<p>You may edit these Javascript variables from <code>loader.js</code>, located right after the line <code>/* SETUP ------</code></p>
+
+<div class="bq vars">
+
+  <h3>shapes <code>Array of strings</code></h3>
+  <p>The array of 13 predefined SVG shapes (paths) you can choose from. Paths in this array is actually half of the shape, as only half of is needed for animation (scaling). It is mirrored with code, so final element is full shape:</p>
+
+	<div class="inline-images">	
+		<img src="readme-files/img/shapes/rect_rotated.png" alt="" />
+		<img src="readme-files/img/shapes/cross_rotated.png" alt="" />
+		<img src="readme-files/img/shapes/clover_2nd.png" alt="" />
+		<img src="readme-files/img/shapes/clover.png" alt="" />
+		<img src="readme-files/img/shapes/circle.png" alt="" />
+		<img src="readme-files/img/shapes/octagon_rounded.png" alt="" />
+		<img src="readme-files/img/shapes/fat_cross.png" alt="" />
+		<img src="readme-files/img/shapes/cross.png" alt="" />
+		<img src="readme-files/img/shapes/five_dots.png" alt="" />
+		<img src="readme-files/img/shapes/rect_shrinked.png" alt="" />
+	</div>
+
+	<p>Note that three shapes can't be rotated during animation as they are unsymmetric in 4 sides : <code>heart_unsymmetric</code>, <code>bars_unsymmetric</code>, <code>hexagon_unsymmetric</code></p>
+	<div class="inline-images">	
+		<img src="readme-files/img/shapes/hexagon_unsymmetric.png" alt="" />
+		<img src="readme-files/img/shapes/bars_unsymmetric.png" alt="" />
+		<img src="readme-files/img/shapes/heart_unsymmetric.png" alt="" />
+	</div>
+
+  <h3>use_shape <code>Array element pointer</code></h3>
+  <p>Select the shape from array 'shapes' above. For example: <code>shapes.rect_rotated</code></p>
+
+  <h3>colors <code>Array of strings</code></h3>
+  <p>The sequence of folding shapes' colors.</p>
+
+  <h3>darken_amount <code>Number</code></h3>
+  <p>Amount of darkening the color when animated. Default is <code>0.3</code></p>
+
+  <h3>duration_1st_half | duration_2nd_half <code>Number</code></h3>
+  <p>Duration of 1st and 2nd half of animation loop. Default is <code>300</code></p>
+
+  <h3>pause <code>Number</code></h3>
+  <p>Pause after 2nd half of animation loop. Default is <code>150</code></p>
+
+  <h3>easing_1st_half | easing_2nd_half <code>String</code></h3>
+  <p>Animation easing methods. Possible values <code>"&lt;"</code>, <code>"&gt;"</code>, <code>"linear"</code>, <code>"&lt;&gt;"</code>, <code>"bounce"</code>, <code>"elastic"</code>, <code>"backIn"</code>, <code>"backOut"</code></p>
+	<p>More info: <a href="http://raphaeljs.com/easing.html" target="_blank">http://raphaeljs.com/easing.html</a></p>
+
+  <h3>angles <code>Array of numbers</code></h3>
+  <p>Angle of SVG elements' rotation after 2nd half of animation loop. Only positive degree values.</p>
+	<p>Rotation sequence example: <code>[ 0, 90, 180, 270 ]</code> (makes loader to rotate by 90 degree after 2nd half of animation loop)</p>
+	<p>If you don't want the loader to rotate, use the array with single variable, for example: <code>[ 180 ]</code></p>
+
+
+  <!--
+  <h3>xxxxx <code>Number</code></h3>
+  <p>xxxxxx.</p>
+  <blockquote>
+    <p>For example: <code>xxxxxx</code></p>
+  </blockquote>
+
+  -->
+
+</div>
+
+
+
+
+
+
+<!-- section -->
+<h2 id="notes">Notes</h2>
+<p><a href="http://raphaeljs.com/" target="_blank">“Raphaël JavaScript Library”</a> made by Dmitry Baranovskiy (<a href="http://raphaeljs.com/license.html" target="_blank">The MIT License</a>).</p>
+
+
+
+
+
+
+
+
+<div class="footer">
+  <h2>Thank you!</h2>
+  <p>Thank you for purchasing my files. If you have any questions that are beyond the scope of this documentation, please feel free to email via my user page <a href="http://codecanyon.net/user/cesgra">contact form</a>. Thanks so much!</p>
+  <p class="credits">Updated: August 12, 2015 by cesgra. Email: <a href="mailto:cz.cesgra@yahoo.co.uk">cz.cesgra@yahoo.co.uk</a></p>
+</div>
+
+</div>
+
+
+<!-- Additional Links code -->
+<script>
+
+	var newlink = document.createElement("link");
+	newlink.setAttribute("rel", "stylesheet");
+	newlink.setAttribute("type", "text/css");
+	newlink.setAttribute("href", "http://dsgnblvd.com/envato/additional_assets/style.css");
+	document.getElementsByTagName("head").item(0).appendChild(newlink);
+
+</script>
+<div class="footer_links">
+	<a href="http://dsgnblvd.com/envato/folding-loader-animated-svg/example-01/loader.html" class="btn">Live preview</a>
+	<a href="http://codecanyon.net/item/folding-loader-animated-svg/12466238?ref=cesgra" class="btn">Buy this item</a>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2176248-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- Additional Links code: END -->
+
+
+</body>
+</html>

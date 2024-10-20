@@ -1,0 +1,32 @@
+body {
+  background-color: #f1f1f1;
+}
+.loader-wrapper {
+  text-align: center;
+  margin-top: 10em;
+}
+
+.loader svg {
+  width:  100px;
+  height: 100px;
+}
+.loader-text {
+  margin-top: 20px;
+}
+.loader-text h2,
+.loader-text p {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #8A908D;
+  margin: 0;
+  padding: 0;
+}
+.loader-text h2 {
+  font-weight: bold;
+  font-size: 60px;
+}
+.loader-text p {
+  font-weight: normal;
+  font-size: 17px;
+}
+
+
