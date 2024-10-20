@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Curl Hover Effects / Adobe Edge animation</title>
+  <link rel="stylesheet" href="readme-files/css/style.css" />
+</head>
+<body>
+
+<div class="header-c">
+<div class="header">
+  <img src="readme-files/img/header-img.jpg" alt="" class="left" />
+  <h1>Curl Hover Effects</h1>
+  <h3>Adobe Edge animation</h3>
+</div>
+</div>
+
+<div class="main">
+<!-- section -->
+<div class="toc">
+  <p><a href="#description">Description</a></p>
+  <p><a href="#differences">Boxes vs. Badges (SVG). The differences</a></p>
+
+  <p><a href="#add-symbol-instances">How to add more symbol instances</a></p>
+  <p><a href="#remove-symbol-instances">How to remove symbol instances</a></p>
+  <p><a href="#change-links-and-js">How to change links or Javascript function after click</a></p>
+  <p><a href="#change-text-color">How to change text color</a></p>
+  <p><a href="#boxes-symbols">Symbols' anatomy in Boxes</a></p>
+  <p><a href="#badges-symbols">Symbols' anatomy in Badges (SVG)</a></p>
+  <p><a href="#inside-svg">Inside SVG files</a></p>
+
+  <p><a href="#publishing">Publishing from Edge Animate</a></p>
+  <p><a href="#mime">SVG files require proper web server MIME-type configuration</a></p>
+  <p><a href="#notes">Notes</a></p>
+</div>
+
+
+
+
+
+
+<!-- section -->
+<div class="description">
+<h2 id="description">Description</h2>
+<p>20 Edge Animate projects with subtle <strong>curl effect</strong> hover animations. Perfectly suitable for website UI elements such as call-to-action buttons, cards, image gallery thumbnail list, social share elements, price badges, profile photos, 'our team' photos list, pricing plans, appstore buttons or other content.</p>
+<ul>
+  <li>Resolution independent scalable vector graphics (SVG) or pure CSS3</li>
+  <li>Easy to customize colors, opacity of elements (with or without Edge Animate software), add new ones or just remove them</li>
+  <li>Included:
+    <ul>
+      <li>Edge Animate files (.an, JS, HTML, SVG)</li>
+      <li>Edge Animate templates (.antmpl)</li>
+      <li>Documentation</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+
+
+
+
+<!-- section -->
+<h2 id="differences">Boxes vs. Badges (SVG). The differences</h2>
+<p>The bundle includes 20 Edge Animate projects of two types I called “Boxes” and “Badges” for the sake of simplicity:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Boxes</th>
+      <th scope="col">Badges (SVG)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>folder</td>
+      <td><code>1.boxes-with-hiders</code></td>
+      <td><code>2.badges-with-svg-sprites</code></td>
+    </tr>
+    <tr>
+      <td>projects</td>
+      <td>9</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>graphics</td>
+      <td>graphic elements in Edge Animate project (.an)</td>
+      <td>almost all graphic elements in external SVG files</td>
+    </tr>
+    <tr>
+      <td>background</td>
+      <td>use only on flat background</td>
+      <td>use on any background</td>
+    </tr>
+    <tr>
+      <td>animation type</td>
+      <td>pure jQuery animation</td>
+      <td>animation limited to the keyframes in SVG spritesheets</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+<!-- section -->
+<h2 id="add-symbol-instances">How to add more symbol instances</h2>
+
+<ol>
+  <li>Open .an file</li>
+  <li>From Library Panel drag the “box” symbol on the Stage. Increase the number in symbol instance's name (ie. “box4”)</li>
+  <li>Edit array “elements” below. Remove <code>//</code> in the commented line</li>
+  <li>In Library Panel duplicate the symbol “txt_3” and increase the number in name (so it becomes “txt_4”). You can edit the content of the new symbol by double clicking on the symbol (in Library panel). “txt_1” is attached to “box1” and so on.</li>
+</ol>
+
+<p><strong>Note:</strong> The amount of “box...” symbol instances on Stage and “txt...” symbols in Library must be the same.  As defined in array “elements”.</p>
+<ul>
+  <li>“box...” symbol instances on Stage: box1, box2, box3, etc.</li>
+  <li>“txt...” symbols in Library: txt_1, txt_2, txt_3, etc.</li>
+</ul>
+
+
+<!-- section -->
+<h2 id="remove-symbol-instances">How to remove symbol instances</h2>
+
+<ol>
+  <li>Open .an file</li>
+  <li>Delete symbol's instance from the Stage (ie. “box3”)</li>
+  <li>Remove “elements” array's line that contains “box3” (ie.)</li>
+</ol>
+
+<p><strong>Note:</strong> The amount of “box...” symbol instances on Stage and “txt...” symbols in Library must be the same.  As defined in array “elements”.</p>
+<ul>
+  <li>“box...” symbol instances on Stage: box1, box2, box3, etc.</li>
+  <li>“txt...” symbols in Library: txt_1, txt_2, txt_3, etc.</li>
+</ul>
+
+
+
+
+
+
+<!-- section -->
+<h2 id="change-links-and-js">How to change links or Javascript function after click</h2>
+
+<p>Change links:</p>
+<ol>
+  <li>Open <code>.an</code> file</li>
+  <li>Open Code window from main menu: Window > Code</li>
+  <li>Look for <code>Stage</code> > <code>document.compositionReady</code> on the left sidebar</li>
+  <li><code>elements</code> array contains the links you can change: <code>http://www.example.com?link1</code> wrapped in apostrophes <code>'</code></li>
+</ol>
+
+<p>Change Javascript funtion:</p>
+<ol>
+  <li>Open <code>.an</code> file</li>
+  <li>Open Code window from main menu: Window > Code</li>
+  <li>Look for <code>box</code> (or badge) > <code>hotspot.click</code> on the left sidebar</li>
+  <li>Code that opens the links: <code>window.open(url, "_self");</code></li>
+  <li>You might replace it to call other Javascript funtion</li>
+</ol>
+
+
+<!-- section -->
+<h2 id="change-text-color">How to change text color</h2>
+
+<p>In some projects colors of the text elements are set with variables:</p>
+
+<ol>
+  <li>Open <code>.an</code> file</li>
+  <li>Open Code window from main menu: Window > Code</li>
+  <li>Look for <code>Stage</code> > <code>document.compositionReady</code> on the left sidebar</li>
+  <li>Look for variables <strong>clr</strong> and <strong>clr_over</strong></li>
+</ol>
+
+<div class="bq">
+<p>Text color</p>
+<blockquote>
+  <code>clr = "#d3f0ea";</code>
+</blockquote>
+
+<p>Text color on hover</p>
+<blockquote>
+  <code>clr_over = "#ffffff";</code>
+</blockquote>
+</div>
+
+
+<!-- section -->
+<h2 id="boxes-symbols">Symbols' anatomy in Boxes</h2>
+
+<p>BOXES &ndash; projects from folder <strong>1.boxes-with-hiders</strong></p>
+
+<h3><strong>“box”</strong> symbol's elements</h3>
+
+<p>In some projects contains animation:</p> 
+
+<p><code>.mouseover</code> animation starts from label named <code>start</code><br />
+<code>.mouseout</code> animation plays same animation in reverse (from last frame to the first)</p>
+
+<div class="bq">
+<p><strong>hotspot</strong></p>
+<blockquote>
+  <p>clickable area, invisible (zero opacity), covers 100% area of the “box”)</p>
+</blockquote>
+
+<p><strong>curl_ani</strong></p>
+<blockquote>
+  <p>symbol with hover animation</p>
+</blockquote>
+
+<p><strong>shine</strong></p>
+<blockquote>
+  <p>symbol with hover animation</p>
+</blockquote>
+
+<p><strong>txt-container</strong> (or “img-container”, or “container”)</p>
+<blockquote>
+  <p>content is attached here (might be “txt...” symbols or images from “elements” array)</p>
+</blockquote>
+
+<p><strong>bckg</strong></p>
+<blockquote>
+  <p>box for background</p>
+</blockquote>
+
+<p><strong>bckg_shadow</strong></p>
+<blockquote>
+  <p>the shadow of the box</p>
+</blockquote>
+</div>
+
+<h3><strong>“curl_ani”</strong> symbol's elements:</h3>
+
+<p><code>.mouseover</code> animation starts from label named <code>start</code><br />
+<code>.mouseout</code> animation plays same animation in reverse (from last frame to the first)</p>
+
+<div class="bq">
+<p><strong>hider</strong></p>
+<blockquote>
+  <p>“triangle” graphic that hides the content underneath</p>
+  <p>the color of “hider” is set to be the same as Stage's background color (<strong>hider_color</strong> variable)</p>
+</blockquote>
+
+<p><strong>curl_element</strong></p>
+<blockquote>
+  <p>“triangle” graphic</p>
+  <p>you can change it's color, opacity or corners (ie. rounded)</p>
+</blockquote>
+
+<p><strong>curl_elementShadow</strong></p>
+<blockquote>
+  <p>“triangle” graphic</p>
+  <p>you can change it's color, opacity, corners (ie. rounded) or position relative to <code>curl_element</code></p>
+</blockquote>
+</div>
+
+<p>To change <code>curl_element</code> or <code>curl_elementShadow</code> color, opacity or corners:</p>
+<ol>
+  <li>Open .an project</li>
+  <li>Open curl_ani symbol from Library (step 1. in image below) with double click on icon</li>
+  <li>Select it (in Elements panel click on the layer with the name - step 2.)</li>
+  <li>From Properties panel:<ul>
+      <li>replace Color (step 3.)</li>
+      <li>set Opacity (step 4.)</li>
+      <li>or set Display to Off (step 5.)</li>
+      <li>or set the new Position values (step 6.) - also you can use arrows keys to move element</li>
+      <li>or set rounded Corners (step 7.)</li>
+    </ul>
+  </li>
+</ol>
+
+<img src="readme-files/img/readme1.jpg" alt="" />
+
+
+<!-- section -->
+<h2 id="badges-symbols">Symbols' anatomy in Badges (SVG)</h2>
+
+<p>BADGES &ndash; projects from folder <strong>2.badges-with-svg-sprites</strong></p>
+
+<h3><strong>“badge”</strong> symbol's elements</h3>
+
+<p><code>.mouseover</code> animation starts from label named <code>start</code><br />
+<code>.mouseout</code> animation plays same animation in reverse (from last frame to the first)</p>
+
+<div class="bq">
+<p><strong>hotspot</strong></p>
+<blockquote>
+  <p>clickable area, invisible (zero opacity), covers 100% area of the “badge”</p>
+</blockquote>
+
+<p><strong>curl_ani</strong></p>
+<blockquote>
+  <p>SVG spritesheet keyframes</p>
+</blockquote>
+
+<p><strong>shine</strong></p>
+<blockquote>
+  <p>symbol with hover animation</p>
+</blockquote>
+
+<p><strong>txt-container</strong> (or “img-container”, or “container”)</p>
+<blockquote>
+  <p>content is attached here (might be “txt...” symbols or images from “elements” array)</p>
+</blockquote>
+
+<p><strong>badge_ani</strong></p>
+<blockquote>
+  <p>SVG spritesheet keyframes</p>
+</blockquote>
+</div>
+
+
+<!-- section -->
+<h2 id="inside-svg">Inside SVG files</h2>
+
+<p>Keyframes of curl animation in spritesheet</p>
+<img src="readme-files/img/readme3.jpg" alt="" />
+
+<p>Elements and their CSS references</p>
+<img src="readme-files/img/readme5.jpg" alt="" />
+
+<p>CSS styles inside SVG</p>
+<img src="readme-files/img/readme2.jpg" alt="" />
+<p>More on CSS in SVG: <a href="http://tutorials.jenkov.com/svg/svg-and-css.html" target="_blank">http://tutorials.jenkov.com/svg/</a></p>
+
+
+<h3>Tweak elements position in SVG</h3>
+<p>You might face situations when there's need to tweak badges' shadows or curls' positions a little bit. Just wrap group of elements in &lt;g&gt; tag and do it with translate() function. The example below moves all elements in group shape 1 unit along the x-axis and 2 units along the y-axis:</p>
+<p><code>&lt;g transform=&quot;translate(1,2)&quot;&gt;</code></p>
+<img src="readme-files/img/readme4.jpg" alt="" />
+
+
+<h3>Note</h3>
+<p>In two BADGES projects (from folder “2.badges-with-svg-sprites”), if you change Stage background color, also you'll have to reflect the changes in these SVG files:</p>
+
+<p><strong>2.05_jagged</strong>/badge5.html</p>
+<blockquote>
+  <p><code>badge.svg</code> &ndash; change badge <strong>stroke color</strong> in CSS: <code>#badge {stroke: #ecede9;}</code></p>
+</blockquote>
+
+<p><strong>2.11_team</strong>/badge11.html</p>
+<blockquote>
+  <p><code>badge_hider.svg</code> &ndash; change hider's <strong>color</strong> in CSS: <code>.badge_hider {fill: #24b296;}</code></p>
+</blockquote>
+
+
+
+<!-- section -->
+<h2 id="publishing">Publishing from Edge Animate</h2>
+<p>After you've done editing in Edge Animate, publish the project files:</p>
+<ol>
+  <li>From main menu: File > Publish</li>
+  <li>Project files are published into <code>publish</code> folder</li>
+</ol>
+<p>Projects in the package use Adobe Content Distribution Network (CDN) Hosting to speed up Animate composition delivery.</p>
+
+<h6>CDN Hosting</h6>
+
+<p>Compositions using the Adobe CDN all share a single URL for jQuery and the Edge Runtime. The browser caches the runtime, so the user only downloads the library once no matter how may Animate compositions they view, even if compositions are on different sites and produced by different authors.</p>
+
+<p>Don't use the CDN if your composition needs to run without an Internet connection or if you want to use your own hosting exclusively.</p>
+
+
+
+<!-- section -->
+<h2 id="mime">SVG files require proper web server MIME-type configuration</h2>
+<p>If SVG files don't show up on web, the server doesn't serve MIME types for SVG files correctly. You should configure server appropriately. There are several ways to do it, depending upon the server type, and your access to server settings.</p>
+
+<p>For example, in <strong>Apache server</strong> it's done by editing <code>.htaccess</code> configuration file that is hidden - make sure your FTP client shows hidden files. If your server does not have such a file, create a file and name it “.htaccess”, and associate the SVG file extensions with the correct MIME Type; if the file already exists, you can simply add the correct entries to it. The particular line you should add are:</p>
+
+<blockquote>
+  <code>AddType image/svg+xml svg</code><br />
+</blockquote>
+<p>The .htaccess file should be placed in the directory that contains the SVG file, or any parent directory. </p>
+
+<p>More on this subject: <a href="http://www.w3.org/services/svg-server/">http://www.w3.org/services/svg-server/</a></p>
+
+
+
+
+<!-- section -->
+<h2 id="notes">Notes</h2>
+<p><strong>Images</strong> are taken from <a href="http://unsplash.com/" target="_blank">Unsplash</a> and <a href="http://pixabay.com/" target="_blank">pixabay.com</a>  websites. <a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank">Public Domain CC0 license</a></p>
+<p><strong>Icons</strong> made by <!-- 
+  --><a href="http://www.flaticon.com/authors/adam-whitcroft" target="_blank">Adam Whitcroft</a>,  <!-- 
+  --><a href="http://www.flaticon.com/authors/elegant-themes" target="_blank">Elegant Themes</a>,  <!-- 
+  --><a href="http://www.flaticon.com/authors/simpleicon" target="_blank">SimpleIcon</a>,  <!-- 
+  --><a href="http://www.flaticon.com/authors/freepik" target="_blank">Freepik</a>,  <!-- 
+  --><a href="http://www.flaticon.com/authors/picol" target="_blank">Picol</a>,  <!-- 
+  --><a href="http://www.flaticon.com/authors/yannick" target="_blank">Yannick</a>  <!-- 
+  -->from <a href="http://flaticon.com" target="_blank">Flaticon.com</a>. <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Public Domain CC3 license</a></p>
+<p>The projects were produced using Adobe Edge Animate CC version 3.0.</p>
+
+<div class="footer">
+  <h2>Thank you!</h2>
+  <p>Thank you for purchasing my files. If you have any questions that are beyond the scope of this documentation, please feel free to email via my user page <a href="http://codecanyon.net/user/cesgra">contact form</a>. Thanks so much!</p>
+  <p class="credits">Created: June 26, 2014 by cesgra. Email: <a href="mailto:cz.cesgra@yahoo.co.uk">cz.cesgra@yahoo.co.uk</a></p>
+</div>
+
+</div>
+
+<!-- Additional Links code -->
+<script>
+
+	var newlink = document.createElement("link");
+	newlink.setAttribute("rel", "stylesheet");
+	newlink.setAttribute("type", "text/css");
+	newlink.setAttribute("href", "http://dsgnblvd.com/envato/additional_assets/style.css");
+	document.getElementsByTagName("head").item(0).appendChild(newlink);
+
+</script>
+<div class="footer_links">
+	<a href="http://dsgnblvd.com/envato/edge-animate-curl-hover-effects/1.01_team/box1.html" class="btn">Live preview</a>
+	<a href="http://codecanyon.net/item/curl-hover-effects/8110117?ref=cesgra" class="btn">Buy this item</a>
+</div>
+<!-- Additional Links code: END -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2176248-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

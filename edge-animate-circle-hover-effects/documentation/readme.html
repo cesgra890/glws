@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Circle Hover Effects / Adobe Edge animation</title>
+  <link rel="stylesheet" href="readme-files/css/style.css" />
+</head>
+<body>
+
+<div class="header-c">
+<div class="header">
+  <img src="readme-files/img/144px.png" alt="" class="left" />
+  <h1>Circle Hover Effects</h1>
+  <h3>Adobe Edge animation</h3>
+</div>
+</div>
+
+<div class="main">
+<!-- section -->
+<div class="toc">
+  <p><a href="#description">Description</a></p>
+
+  <p><a href="#add-symbol-instances">How to add more symbol instances</a></p>
+  <p><a href="#remove-symbol-instances">How to remove symbol instances</a></p>
+  <p><a href="#change-icons">How to change the icons</a></p>
+  <p><a href="#change-icon-color">How to change icons' color</a></p>
+  <p><a href="#turn-off-initial-animation">How to turn off initial “Stage” animation</a></p>
+
+  <p><a href="#change-links-and-js">How to change links or Javascript function after click</a></p>
+  <p><a href="#publishing">Publishing from Edge Animate</a></p>
+  <p><a href="#mime">SVG files require proper web server MIME-type configuration</a></p>
+  <p><a href="#notes">Notes</a></p>
+</div>
+
+
+
+
+
+
+
+
+<!-- section -->
+<div class="description">
+<h2 id="description">Description</h2>
+<p>28 Edge Animate projects with <strong>hover effect</strong> animations for content (icons) in circles.</p>
+<ul>
+  <li>Uses icon fonts to display the icons</li>
+  <li>Resolution independent graphics - pure CSS shapes, icon fonts or SVG</li>
+  <li>Easy to customize colors, opacity of elements (with or without Edge Animate software), add new ones or just remove them</li>
+  <li>Included:
+    <ul>
+      <li>Edge Animate files (.an, JS, HTML)</li>
+      <li>Icon fonts (for preview purpose)</li>
+      <li>Documentation</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+
+
+
+
+<!-- section -->
+<h2 id="add-symbol-instances">How to add more symbol instances</h2>
+
+<ol>
+  <li>Open .an file</li>
+  <li>Select “Group” layer, right click, choose “Ungroup Elements”</li>
+  <li>From Library Panel drag the “box” symbol on the Stage. Increase the number in symbol instance's name (for example “box6”)</li>
+  <li>Edit array “elements” below. Remove <code>//</code> in the commented line</li>
+  <li>Change character in icon font that contains new icon</li>
+  <li>Select all box instances on Stage and group them. Make sure the group is named “Group” (not “Group2” or anything else).</li>
+</ol>
+
+<p><strong>Note:</strong> The amount of “box...” symbol instances on Stage and number of elements in array “elements” must be the same. The “box” instances must be grouped to center them horizontally.</p>
+
+
+
+
+
+<!-- section -->
+<h2 id="remove-symbol-instances">How to remove symbol instances</h2>
+
+<ol>
+  <li>Open .an file</li>
+  <li>Select “Group” layer, right click, choose “Ungroup Elements”</li>
+  <li>Delete symbol's instance from the Stage (for example “box3”)</li>
+  <li>Remove “elements” array's line that contains “box3” (for example)</li>
+  <li>Select all box instances on Stage and group them. Make sure the group is named “Group” (not “Group2” or anything else).</li>
+</ol>
+
+<p><strong>Note:</strong> The amount of “box...” symbol instances on Stage and number of elements in array “elements” must be the same. The “box” instances must be grouped to center them horizontally.</p>
+
+
+
+
+
+<!-- section -->
+<h2 id="change-icons">How to change the icons</h2>
+
+<p>All project files use icon fonts generated with <a href="http://fontastic.me/" target="_blank">“Fontastic”</a> &ndash; free online icon font generator. To change the icons you need to make your own icon font &ndash; the process is simple with “Fontastic”.</p>
+
+<p><strong>Create the icon font:</strong></p>
+
+<ol>
+  <li>Create your free “Fontastic” account.</li>
+  <li>Login into <a href="http://app.fontastic.me/" target="_blank">http://app.fontastic.me/</a>.</li>
+  <li>Step SELECT: Select the icons you'd like to use.</li>
+  <li>Click “Modify Font” menu link and change “Font Name” to <strong>icon-font</strong>.</li>
+  <li>Step CUSTOMIZE: Map the icons to characters you'll use in Edge Animate project. Use characters “1”, “2”, “3”, “4”, “5” &ndash; these characters are used in all projects.</li>
+  <li>Step PUBLISH: click DOWNLOAD button to get your icon font.</li>
+</ol>
+
+<p><strong>Replace the icon font:</strong></p>
+<ol>
+  <li>Unzip the file.</li>
+  <li>Copy the folder “fonts” and “styles.css” to project folder “icons” &ndash; replace the files.</li>
+  <li>Refresh the .html file and you'll see the new icons.</li>
+</ol>
+
+<p>Note: If you've mapped other characters than “1”, “2”, “3”, “4”, “5”, you'll need to change the code in <code>.an</code> file:</p>
+<ol>
+  <li>Open <code>.an</code> file.</li>
+  <li>Open Code window from main menu: Window > Code.</li>
+  <li>Look for <code>Stage</code> > <code>document.compositionReady</code> on the left sidebar.</li>
+  <li>In “elements” array look for values in “character” properties &ndash; these should be the characters you've mapped the icons to. Change them to the ones your icon font is using.</li>
+</ol>
+
+
+<!-- section -->
+<h2 id="change-icon-color">How to change icons' color</h2>
+
+<p>Colors of the icons (icon font characters) are set with variables:</p>
+
+<ol>
+  <li>Open <code>.an</code> file</li>
+  <li>Open Code window from main menu: Window > Code</li>
+  <li>Look for <code>Stage</code> > <code>document.compositionReady</code> on the left sidebar</li>
+  <li>Look for variables <strong>clr</strong> and <strong>clr_over</strong></li>
+</ol>
+
+<div class="bq">
+<p>Icon color</p>
+<blockquote>
+  <code>clr = "#d3f0ea";</code>
+</blockquote>
+
+<p>Icon color on hover</p>
+<blockquote>
+  <code>clr_over = "#ffffff";</code>
+</blockquote>
+
+<p>In some cases clr or clr_over might be set to use the color of the Stage:</p>
+<blockquote>
+  <code>clr_over = stage_clr;</code>
+</blockquote>
+</div>
+
+
+
+
+
+<!-- section -->
+<h2 id="turn-off-initial-animation">How to turn off initial “Stage” animation</h2>
+
+<p>By default, all “box” elements are animated to appear on the Stage one by one (not instantly) with their opacities fade in. However there might be situations when you don't desire such animation. To remove it:</p>
+
+<ol>
+  <li>Open .an file</li>
+  <li>Open Code window from main menu: Window > Code</li>
+  <li>Look for <code>Stage</code> > <code>document.compositionReady</code> on the left sidebar</li>
+  <li>Find the line <code>/* opacity animation after Stage loads */</code> that's located almost in the end</li>
+  <li>Remove (or comment) the line that starts like this <code>box.element.css({'transition'</code></li>
+</ol>
+
+
+
+
+<!-- section -->
+<h2 id="change-links-and-js">How to change links or Javascript function after click</h2>
+
+<p>Change links:</p>
+<ol>
+  <li>Open <code>.an</code> file</li>
+  <li>Open Code window from main menu: Window > Code</li>
+  <li>Look for <code>Stage</code> > <code>document.compositionReady</code> on the left sidebar</li>
+  <li><code>elements</code> array contains the links you can change &ndash; look for values in “url” properties: <code>http://www.example.com?link1</code> wrapped in apostrophes <code>'</code></li>
+</ol>
+
+<p>Change Javascript funtion:</p>
+<ol>
+  <li>Open <code>.an</code> file</li>
+  <li>Open Code window from main menu: Window > Code</li>
+  <li>Look for <code>box</code> > <code>hotspot.click</code> on the left sidebar</li>
+  <li>Code that opens the links: <code>window.open(url, "_self");</code></li>
+  <li>You might replace it to call other Javascript funtion</li>
+</ol>
+
+
+
+<!-- section -->
+<h2 id="publishing">Publishing from Edge Animate</h2>
+<p>After you've done editing in Edge Animate, publish the project files:</p>
+<ol>
+  <li>From main menu: File > Publish</li>
+  <li>Project files are published into <code>publish</code> folder</li>
+</ol>
+<p>Projects in the package use Adobe Content Distribution Network (CDN) Hosting to speed up Animate composition delivery.</p>
+
+<h6>CDN Hosting</h6>
+
+<p>Compositions using the Adobe CDN all share a single URL for jQuery and the Edge Runtime. The browser caches the runtime, so the user only downloads the library once no matter how may Animate compositions they view, even if compositions are on different sites and produced by different authors.</p>
+
+<p>Don't use the CDN if your composition needs to run without an Internet connection or if you want to use your own hosting exclusively.</p>
+
+
+
+<!-- section -->
+<h2 id="mime">SVG files require proper web server MIME-type configuration</h2>
+<p>If SVG files don't show up on web, the server doesn't serve MIME types for SVG files correctly. You should configure server appropriately. There are several ways to do it, depending upon the server type, and your access to server settings.</p>
+
+<p>For example, in <strong>Apache server</strong> it's done by editing <code>.htaccess</code> configuration file that is hidden - make sure your FTP client shows hidden files. If your server does not have such a file, create a file and name it “.htaccess”, and associate the SVG file extensions with the correct MIME Type; if the file already exists, you can simply add the correct entries to it. The particular line you should add are:</p>
+
+<blockquote>
+  <code>AddType image/svg+xml svg</code><br />
+</blockquote>
+<p>The .htaccess file should be placed in the directory that contains the SVG file, or any parent directory. </p>
+
+<p>More on this subject: <a href="http://www.w3.org/services/svg-server/">http://www.w3.org/services/svg-server/</a></p>
+
+
+
+
+<!-- section -->
+<h2 id="notes">Notes</h2>
+<p><strong>Icons</strong> from “Foundation Icons” set made by ZURB (<a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Public Domain CC3 license</a>).</p>
+<p><strong>Icon fonts</strong> generated with <a href="http://fontastic.me/" target="_blank">“Fontastic”</a> &ndash; free online icon font generator.</p>
+<p>The projects were produced using Adobe Edge Animate CC version 3.0.</p>
+
+
+
+
+<div class="footer">
+  <h2>Thank you!</h2>
+  <p>Thank you for purchasing my files. If you have any questions that are beyond the scope of this documentation, please feel free to email via my user page <a href="http://codecanyon.net/user/cesgra">contact form</a>. Thanks so much!</p>
+  <p class="credits">Created: July 22, 2014 by cesgra. Email: <a href="mailto:cz.cesgra@yahoo.co.uk">cz.cesgra@yahoo.co.uk</a></p>
+</div>
+
+</div>
+
+<!-- Additional Links code -->
+<script>
+
+	var newlink = document.createElement("link");
+	newlink.setAttribute("rel", "stylesheet");
+	newlink.setAttribute("type", "text/css");
+	newlink.setAttribute("href", "http://dsgnblvd.com/envato/additional_assets/style.css");
+	document.getElementsByTagName("head").item(0).appendChild(newlink);
+
+</script>
+<div class="footer_links">
+	<a href="http://dsgnblvd.com/envato/edge-animate-circle-hover-effects/01.inverse-double-stroke-outside-outwards/circle.html" class="btn">Live preview</a>
+	<a href="http://codecanyon.net/item/circle-hover-effects/8389447?ref=cesgra" class="btn">Buy this item</a>
+</div>
+<!-- Additional Links code: END -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2176248-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

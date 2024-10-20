@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2000" height="400" viewBox="0 0 2000 400">
+<defs>
+
+<!-- clips -->
+<clipPath id="cp2"><polyline points="0,0  0,330  330,0 0,0" /></clipPath>
+<clipPath id="cp3"><polyline points="0,0  0,327.5  327.5,0 0,0" /></clipPath>
+<clipPath id="cp4"><polyline points="0,0  0,325  325,0 0,0" /></clipPath>
+<clipPath id="cp5"><polyline points="0,0  0,323  323,0 0,0" /></clipPath>
+<clipPath id="cp6"><polyline points="0,0  0,321  321,0 0,0" /></clipPath>
+<clipPath id="cp7"><polyline points="0,0  0,319.5  319.5,0 0,0" /></clipPath>
+<clipPath id="cp8"><polyline points="0,0  0,318.2  318.2,0 0,0" /></clipPath>
+<clipPath id="cp9"><polyline points="0,0  0,317.8  317.8,0 0,0" /></clipPath>
+<clipPath id="cp10"><polyline points="0,0  0,317.5  317.5,0 0,0" /></clipPath>
+
+<!-- colors -->
+<radialGradient id="rg" fx="35%" fy="35%" r="100%" spreadMethod="pad">
+  <stop offset="0%"     stop-color="#ffffff" stop-opacity="1" />
+  <stop offset="15%"    stop-color="#ffffff" stop-opacity="1" />
+  <stop offset="100%"   stop-color="#d6d6d6" stop-opacity="1" />
+</radialGradient>
+
+<linearGradient id="lg" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+  <stop offset="0%"    stop-color="#6af570" stop-opacity="1" />
+  <stop offset="100%"     stop-color="#00af4a" stop-opacity="1" />
+</linearGradient>
+
+<radialGradient id="flip_shadow_gradient" fx="50%" fy="50%" r="50%" spreadMethod="pad">
+  <stop offset="0%"     stop-color="#000" stop-opacity="1" />
+  <stop offset="90%"   stop-color="#000" stop-opacity="0.7" />
+  <stop offset="100%"   stop-color="#000" stop-opacity="0" />
+</radialGradient>
+
+<linearGradient id="flip" x1="0%" y1="0%" x2="0%" y2="40%" spreadMethod="pad">
+  <stop offset="0%"     stop-color="#e67e22" stop-opacity="1" />
+  <stop offset="100%"    stop-color="#e67e22" stop-opacity="1" />
+</linearGradient>
+
+<!-- shapes -->
+<circle id="badge" cx="100" cy="100" r="98" />
+<circle id="badge_shadow" cx="100" cy="100" r="98" />
+
+<!-- sprites -->
+<use id="sprite_1" xlink:href="#badge" />
+<use id="sprite_1_shadow" xlink:href="#badge_shadow" />
+
+<use clip-path="url(#cp2)" id="sprite_2" xlink:href="#badge" />
+<use clip-path="url(#cp2)" id="sprite_2_shadow" xlink:href="#badge_shadow" />
+  <g id="sprite_2_flip" clip-path="url(#cp2)">
+    <circle cx="185" cy="185" r="50.0" class="flip_shadow_gradient" />
+    <circle cx="200" cy="200" r="60.0" class="flip_shadow" transform="translate(-2,0)" />
+    <circle cx="200" cy="200" r="60.0" class="flip" />
+  </g>
+
+<use clip-path="url(#cp3)" id="sprite_3" xlink:href="#badge" />
+<use clip-path="url(#cp3)" id="sprite_3_shadow" xlink:href="#badge_shadow" />
+  <g id="sprite_3_flip" clip-path="url(#cp3)">
+    <circle cx="185" cy="185" r="54.2" class="flip_shadow_gradient" />
+    <circle cx="200" cy="200" r="64.2" class="flip_shadow" transform="translate(-2,0)" />
+    <circle cx="200" cy="200" r="64.2" class="flip" />
+  </g>
+
+<use clip-path="url(#cp4)" id="sprite_4" xlink:href="#badge" />
+<use clip-path="url(#cp4)" id="sprite_4_shadow" xlink:href="#badge_shadow" />
+  <g id="sprite_4_flip" clip-path="url(#cp4)">
+    <circle cx="185" cy="185" r="57.9" class="flip_shadow_gradient" />
+    <circle cx="200" cy="200" r="67.9" class="flip_shadow" transform="translate(-2,0)" />
+    <circle cx="200" cy="200" r="67.9" class="flip" />
+  </g>
+
+<use clip-path="url(#cp5)" id="sprite_5" xlink:href="#badge" />
+<use clip-path="url(#cp5)" id="sprite_5_shadow" xlink:href="#badge_shadow" />
+  <g id="sprite_5_flip" clip-path="url(#cp5)">
+    <circle cx="185" cy="185" r="60.9" class="flip_shadow_gradient" />
+    <circle cx="200" cy="200" r="70.9" class="flip_shadow" transform="translate(-2,0)" />
+    <circle cx="200" cy="200" r="70.9" class="flip" />
+  </g>
+
+<use clip-path="url(#cp6)" id="sprite_6" xlink:href="#badge" />
+<use clip-path="url(#cp6)" id="sprite_6_shadow" xlink:href="#badge_shadow" />
+  <g id="sprite_6_flip" clip-path="url(#cp6)">
+    <circle cx="185" cy="185" r="63.5" class="flip_shadow_gradient" />
+    <circle cx="200" cy="200" r="73.5" class="flip_shadow" transform="translate(-2,0)" />
+    <circle cx="200" cy="200" r="73.5" class="flip" />
+  </g>
+
+<use clip-path="url(#cp7)" id="sprite_7" xlink:href="#badge" />
+<use clip-path="url(#cp7)" id="sprite_7_shadow" xlink:href="#badge_shadow" />
+  <g id="sprite_7_flip" clip-path="url(#cp7)">
+    <circle cx="185" cy="185" r="65.4" class="flip_shadow_gradient" />
+    <circle cx="200" cy="200" r="75.4" class="flip_shadow" transform="translate(-2,0)" />
+    <circle cx="200" cy="200" r="75.4" class="flip" />
+  </g>
+
+<use clip-path="url(#cp8)" id="sprite_8" xlink:href="#badge" />
+<use clip-path="url(#cp8)" id="sprite_8_shadow" xlink:href="#badge_shadow" />
+  <g id="sprite_8_flip" clip-path="url(#cp8)">
+    <circle cx="185" cy="185" r="66.9" class="flip_shadow_gradient" />
+    <circle cx="200" cy="200" r="76.9" class="flip_shadow" transform="translate(-2,0)" />
+    <circle cx="200" cy="200" r="76.9" class="flip" />
+  </g>
+
+<use clip-path="url(#cp9)" id="sprite_9" xlink:href="#badge" />
+<use clip-path="url(#cp9)" id="sprite_9_shadow" xlink:href="#badge_shadow" />
+  <g id="sprite_9_flip" clip-path="url(#cp9)">
+    <circle cx="185" cy="185" r="67.7" class="flip_shadow_gradient" />
+    <circle cx="200" cy="200" r="77.7" class="flip_shadow" transform="translate(-2,0)" />
+    <circle cx="200" cy="200" r="77.7" class="flip" />
+  </g>
+
+<use clip-path="url(#cp10)" id="sprite_10" xlink:href="#badge" />
+<use clip-path="url(#cp10)" id="sprite_10_shadow" xlink:href="#badge_shadow" />
+  <g id="sprite_10_flip" clip-path="url(#cp10)">
+    <circle cx="185" cy="185" r="68.0" class="flip_shadow_gradient" />
+    <circle cx="200" cy="200" r="78.0" class="flip_shadow" transform="translate(-2,0)" />
+    <circle cx="200" cy="200" r="78.0" class="flip" />
+  </g>
+
+<style type="text/css" >
+<![CDATA[
+
+#badge {
+  fill: url(#lg);
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-opacity: 0;
+}
+
+#badge_shadow {
+  fill: #000;
+  opacity: 0.25;
+}
+
+.flip {
+  stroke: #333;
+  stroke-width: 0;
+  stroke-opacity: 0;
+  fill: #ffffff;
+}
+
+.flip_shadow_gradient {
+  fill: url(#flip_shadow_gradient);
+  opacity: 0.2;
+}
+
+.flip_shadow {
+  fill: #444;
+  opacity: 0.25;
+}
+
+]]>
+</style>
+
+</defs>
+
+<!-- <rect height="100%" width="100%" fill="#ffcc00" /> -->
+
+<!-- badges' shadows -->
+<g transform="translate(-1,2)">
+  <use xlink:href="#sprite_1_shadow" x="0" y="0" />
+  <use xlink:href="#sprite_2_shadow" x="200" y="0" />
+  <use xlink:href="#sprite_3_shadow" x="400" y="0" />
+  <use xlink:href="#sprite_4_shadow" x="600" y="0" />
+  <use xlink:href="#sprite_5_shadow" x="800" y="0" />
+  <use xlink:href="#sprite_6_shadow" x="1000" y="0" />
+  <use xlink:href="#sprite_7_shadow" x="1200" y="0" />
+  <use xlink:href="#sprite_8_shadow" x="1400" y="0" />
+  <use xlink:href="#sprite_9_shadow" x="1600" y="0" />
+  <use xlink:href="#sprite_10_shadow" x="1800" y="0" />
+</g>
+
+<!-- badges -->
+<g>
+  <use xlink:href="#sprite_1" x="0" y="0" />
+  <use xlink:href="#sprite_2" x="200" y="0" />
+  <use xlink:href="#sprite_3" x="400" y="0" />
+  <use xlink:href="#sprite_4" x="600" y="0" />
+  <use xlink:href="#sprite_5" x="800" y="0" />
+  <use xlink:href="#sprite_6" x="1000" y="0" />
+  <use xlink:href="#sprite_7" x="1200" y="0" />
+  <use xlink:href="#sprite_8" x="1400" y="0" />
+  <use xlink:href="#sprite_9" x="1600" y="0" />
+  <use xlink:href="#sprite_10" x="1800" y="0" />
+</g>
+
+<!-- flips -->
+<g transform="translate(0,200)">
+  <g><use xlink:href="#sprite_2_flip" x="200" y="0" /></g>
+  <g><use xlink:href="#sprite_3_flip" x="400" y="0" /></g>
+  <g><use xlink:href="#sprite_4_flip" x="600" y="0" /></g>
+  <g><use xlink:href="#sprite_5_flip" x="800" y="0" /></g>
+  <g><use xlink:href="#sprite_6_flip" x="1000" y="0" /></g>
+  <g><use xlink:href="#sprite_7_flip" x="1200" y="0" /></g>
+  <g><use xlink:href="#sprite_8_flip" x="1400" y="0" /></g>
+  <g><use xlink:href="#sprite_9_flip" x="1600" y="0" /></g>
+  <g><use xlink:href="#sprite_10_flip" x="1800" y="0" /></g>
+</g>
+
+
+
+</svg>
+

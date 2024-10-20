@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>SVG Donut Charts / Adobe Edge animation</title>
+  <link rel="stylesheet" href="readme-files/css/style.css" />
+</head>
+<body>
+
+<div class="header-c">
+<div class="header">
+  <img src="readme-files/img/144px.png" alt="" class="left" />
+  <h1>SVG Donut Charts</h1>
+  <h3>Adobe Edge animation</h3>
+</div>
+</div>
+
+<div class="main">
+<!-- section -->
+<div class="toc">
+  <p><a href="#description">Description</a></p>
+  <p><a href="#resize-symbol-instances">How to resize symbol instances</a></p>
+  <p><a href="#add-symbol-instances">How to add more symbol instances</a></p>
+  <p><a href="#remove-symbol-instances">How to remove symbol instances</a></p>
+  <p><a href="#variables-explained">Variables explained</a></p>
+  <p><a href="#change-icons">How to change the icons</a></p>
+  <p><a href="#multiple-compositions">Multiple Compositions in a page</a></p>
+  <p><a href="#show-on-scroll">Trigger animation when the window is scrolled to Edge Animate file position</a></p>
+  <p><a href="#publishing">Publishing from Edge Animate</a></p>
+  <p><a href="#mime">SVG files require proper web server MIME-type configuration</a></p>
+  <p><a href="#ie">Notes on Internet Explorer</a></p>
+  <p><a href="#notes">Notes</a></p>
+</div>
+
+
+
+
+<!-- section -->
+<div class="description">
+<h2 id="description">Description</h2>
+<p>6 Edge Animate projects (+16 additional examples) with animated <strong>SVG Donut Charts</strong> for infographics, statistics, dashboard charts and other data visualisations.</p>
+<ul>
+  <li>Displays one value or compairs two different values</li>
+  <li>Present as Donut or Pie chart</li>
+  <li>Animated SVG (CSS3 animation)</li>
+  <li>Some projects use icon fonts to display the icons</li>
+  <li>Resolution independent graphics - pure CSS shapes, icon fonts or SVG</li>
+  <li>Any count of chart instances (easy to add more)</li>
+  <li>Easy to change data, animation easing, animation direction, colors of elements (with or without Edge Animate software), add new ones or just remove them</li>
+  <li>Included:
+    <ul>
+      <li>Edge Animate files (.an, JS, HTML)</li>
+      <li>Icon fonts in some projects (for preview purpose)</li>
+      <li>Documentation</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+
+
+
+
+<!-- section -->
+<h2 id="resize-symbol-instances">How to resize symbol instances</h2>
+
+<ol>
+  <li>Open .an file (with Edge Animate)</li>
+  <li>Click on the layer with instance you want to resize, “box1” for example.</li>
+  <li>In “Properties” panel change the width/height from 300px to the new one (you'll find controllers under the “Position and Size” section).</li>
+  <li>Save the file.</li>
+</ol>
+
+
+
+
+<!-- section -->
+<h2 id="add-symbol-instances">How to add more symbol instances</h2>
+
+<ol>
+  <li>Open .an file (with Edge Animate)</li>
+  <li>Select “Group” layer, right click, choose “Ungroup Elements”</li>
+  <li>From Library Panel drag the “box” symbol on the Stage. Increase the number in symbol instance's name (for example “box4”)</li>
+  <li>Edit array “elements” below. Remove <code>//</code> in the commented line. Open Code window for that (top menu > Window > Code)</li>
+  <li>Change variables' values in “elements” according to your needs</li>
+  <li>Select all box instances on Stage and group them. Make sure the group is named “Group” (not “Group2” or anything else).</li>
+</ol>
+
+<p><strong>Note:</strong> The amount of “box...” symbol instances on Stage and number of elements in array “elements” must be the same. The “box” instances must be grouped to center-align them horizontally.</p>
+
+
+
+
+
+<!-- section -->
+<h2 id="remove-symbol-instances">How to remove symbol instances</h2>
+
+<ol>
+  <li>Open .an file (with Edge Animate)</li>
+  <li>Select “Group” layer, right click, choose “Ungroup Elements”</li>
+  <li>Delete symbol's instance from the Stage (for example “box3”)</li>
+  <li>Remove “elements” array's line that contains “box3” (for example). Open Code window for that (top menu > Window > Code)</li>
+  <li>Select all box instances on Stage and group them. Make sure the group is named “Group” (not “Group2” or anything else).</li>
+</ol>
+
+<p><strong>Note:</strong> The amount of “box...” symbol instances on Stage and number of elements in array “elements” must be the same. The “box” instances must be grouped to center them horizontally.</p>
+
+
+<!-- section -->
+<h2 id="variables-explained">Variables explained</h2>
+
+<p>All the variables you can safely modify and play with are listed between two commented lines with text “VARIABLES SETUP”. Below comes every variable explained.</p>
+
+<p>Values stored in “elements” array are chart individual, for example you can set different numbers, text, colors etc. for every chart. Variables set outside the “elements” array contain global properties for different charts (and so set same properties). Note that some variables might be absent in particular project.</h5>
+
+
+
+
+
+
+
+
+
+<div class="bq vars">
+
+  <h3>instance <code>String</code></h3>
+  <p>Name of the "box" symbol instance on the Stage. For example: <code>"box1"</code></p>
+  </blockquote>
+
+  <h3>numbers <code>Array of numbers</code></h3>
+  <p>1st number - full value. For example: <code>100</code></p>
+  <p>2nd number - value relative to full value. For example: <code>50</code></p>
+
+  <h3>numbers2nd <code>Array of numbers</code></h3>
+  <p>Same as with “numbers”, but for the second donut. In the projects with two donuts.</p>
+
+  <h3>numberColor <code>String</code></h3>
+  <p>Color of the number. For example: <code>"#222"</code></p>
+
+  <h3>numberColors <code>Array of strings</code></h3>
+  <p>1st string - color of the first number. For example: <code>"3081b9"</code></p>
+  <p>2nd string - color of the first number. For example: <code>"49dbe8"</code></p>
+
+  <h3>numberText <code>String</code></h3>
+  <p>The additional text for the numbers (on the right side). For example: <code>"%"</code> or <code>""</code> (blank)</p>
+
+  <h3>numberTexts <code>Array of strings</code></h3>
+  <p>1st string - additional text for the first number (on the right side). For example: <code>"%"</code> or <code>""</code> (blank)</p>
+  <p>2nd string - additional text for the second number (on the right side). For example: <code>"%"</code> or <code>""</code> (blank)</p>
+
+  <h3>donutColors <code>Array of strings</code></h3>
+  <p>1st string - the color gradient starts. For example: <code>"3081b9"</code></p>
+  <p>2nd string - the color gradient stops. For example: <code>"49dbe8"</code>. Use the same as 1st string if you want to get flat color.</p>
+
+  <h3>donut2ndColors <code>Array of strings</code></h3>
+  <p>Same as with “donut2ndColors”, but for the second donut. In the projects with two donuts.</p>
+
+  <h3>icon <code>String</code></h3>
+  <p>The character from icon font the icon is mapped to. For example: <code>"a"</code>. More on that <a href="#change-icons">here</a></p>
+
+  <h3>iconColor <code>String</code></h3>
+  <p>Color of the icon. For example: <code>"#3081b9"</code></p>
+
+  <h3>text <code>String</code></h3>
+  <p>Text for the chart. For example: <code>"Coffee"</code></p>
+
+  <h3>textColor <code>String</code></h3>
+  <p>Color of the text. For example: <code>"#222"</code></p>
+
+
+
+
+
+  <p><img src="readme-files/img/1-vars.jpg" alt="" /></p>
+  <h3>chartDiameter <code>Number</code></h3>
+  <p>Diameter of chart</p>
+  <blockquote>
+    <p>For example: <code>80</code></p>
+  </blockquote>
+
+  <h3>donutStroke <code>Number</code></h3>
+  <p>Donut stroke width</p>
+  <blockquote>
+    <p>For example: <code>20</code></p>
+  </blockquote>
+
+  <h3>fullDonutStroke <code>Number</code></h3>
+  <p>Full donut stroke width</p>
+  <blockquote>
+    <p>For example: <code>20</code></p>
+  </blockquote>
+
+  <h3>fullDonutColor <code>String</code></h3>
+  <p>Full donut stroke color</p>
+  <blockquote>
+    <p>For example: <code>"#f1f1f1"</code></p>
+  </blockquote>
+
+  <h3>donutStrokeLinecap <code>String</code></h3>
+  <p>“round” for donut with rounded ends, “butt” for straight ending donuts. Value for SVG “stroke-linecap” CSS property.</p>
+  <blockquote>
+    <p>For example: <code>"butt"</code>, <code>"round"</code></p>
+  </blockquote>
+  </blockquote>
+
+  <p><img src="readme-files/img/2-circle-portion.jpg" alt="" /></p>
+  <h3>circlePortion <code>Number</code></h3>
+  <p>Portion of the circle. “100” makes full circle, “50” makes half of the circle, and so on.</p>
+  <blockquote>
+    <p>percentage from <code>0</code> to <code>100</code></p>
+  </blockquote>
+
+  <h3>chartRotate <code>Number</code></h3>
+  <p>Rotate the chart (in degrees)</p>
+  <blockquote>
+    <p>from <code>-360</code> to <code>360</code></p>
+  </blockquote>
+
+  <h3>animationDirection <code>String</code></h3>
+  <p>“CW” makes animation go clockwise, “CCW” - counterclockwise</p>
+  <blockquote>
+    <p>For example: <code>"CW"</code> or <code>"CCW"</code></p>
+  </blockquote>
+
+  <h3>animationDuration <code>String</code></h3>
+  <p>Donut animation duration. Value for CSS property “animation-duration”</p>
+  <blockquote>
+    <p>For example: <code>1s</code>, <code>0.5s</code>, <code>350ms</code></p>
+  </blockquote>
+
+  <h3>animationEasing <code>String</code></h3>
+  <p>Donut animation easing. Value for CSS property “animation-timing-function”. You can get more easing functions here: <a href = "http://easings.net/" target="_blank">easings.net</a></p>
+  <blockquote>
+    <p>For example: <code>linear</code>, <code>ease</code>, <code>ease-out</code>, <code>ease-in</code>, <code>ease-in-out</code>, <code>cubic-bezier(0.785, 0.135, 0.15, 0.86)</code></p>
+  </blockquote>
+
+  <h3>numberTextSize <code>Number</code></h3>
+  <p>The size of additional text for the numbers (on the right side). Percentage of number's “font-size”.</p>
+  <blockquote>
+    <p>percentage from <code>0</code> to <code>100</code></p>
+  </blockquote>
+
+  <h3>numberTextOpacity <code>Number</code></h3>
+  <p>The opacity of additional text.</p>
+  <blockquote>
+    <p>from <code>0</code> to <code>1</code></p>
+  </blockquote>
+
+  <h3>ruler <code>Boolean</code></h3>
+  <p>“true” shows ruler's stripes, “false” hides it. Other ruler variables (below) work only if this value is set to “true”. <!--Note that this ruler element is more for visual purpose and might not reflect the values very precisely.--></p>
+  <blockquote>
+    <p>One of these: <code>true</code> or <code>false</code></p>
+  </blockquote>
+
+  <h3>rulerSegments <code>Number</code></h3>
+  <p>The amount of segments the ruler is divided into.</p>
+  <blockquote>
+    <p>For example: <code>24</code></p>
+  </blockquote>
+
+  <h3>rulerThickness <code>Number</code></h3>
+  <p>Ruler's bar thickness.</p>
+  <blockquote>
+    <p>For example: <code>22</code></p>
+  </blockquote>
+
+  <h3>rulerColor <code>String</code></h3>
+  <p>The color of ruler's dashes.</p>
+  <blockquote>
+    <p>For example: <code>"#fff"</code></p>
+  </blockquote>
+
+  <h3>rulerDashThickness <code>Number</code></h3>
+  <p>The thickness of ruler's dashes.</p>
+  <blockquote>
+    <p>Any positive number, For example: <code>1</code>, <code>2.5</code>, <code>10</code>, and so on.</p>
+  </blockquote>
+
+  <h3>rulerLineCap <code>String</code></h3>
+  <p>“butt” for straight dashes, “round” for rounded. Value for SVG “stroke-linecap” CSS property. Defines how the ends of an SVG line is rendered</p>
+  <blockquote>
+    <p>For example: <code>"butt"</code>, <code>"round"</code></p>
+  </blockquote>
+
+  <h3>rulerDashOffset <code>Number</code></h3>
+  <p>Reposition the ruler for fine-tuning if needed.</p>
+  <blockquote>
+    <p>Negative and positive numbers. For example: <code>0</code>, <code>5</code>, <code>-5</code></p>
+  </blockquote>
+
+  <h3>rulerScaleFactor <code>Number</code></h3>
+  <p>Scale the ruler element. Larger than “1” - increases, smaller than “1” - decreases it.</p>
+  <blockquote>
+    <p>For example: <code>1</code></p>
+  </blockquote>
+
+  <h3>rulerHideFirstLast <code>Boolean</code></h3>
+  <p>“true” hides the first and the last ruler's dash, “false” shows all the dashes.</p>
+  <blockquote>
+    <p>One of these: <code>true</code> or <code>false</code></p>
+  </blockquote>
+
+  <h3>rulerOpacity <code>Number</code></h3>
+  <p>The opacity of ruler element.</p>
+  <blockquote>
+    <p>from <code>0</code> to <code>1</code></p>
+  </blockquote>
+
+  <h3>legendTitles <code>Array of strings</code></h3>
+  <p>Text below the chart tied to the number.</p>
+  <blockquote>
+    <p>1st string - first title. For example: <code>"September"</code></p>
+    <p>2nd string - second title. For example: <code>"October"</code></p>
+  </blockquote>
+
+  <h3>makeBiggerValueBold <code>Boolean</code></h3>
+  <p>Highlight bigger value with bold text.</p>
+  <blockquote>
+    <p>One of these: <code>true</code> or <code>false</code></p>
+  </blockquote>
+
+  <h3>donutStrokeBigger <code>Number</code></h3>
+  <p>Stroke width of the donut that shows bigger number.</p>
+  <blockquote>
+    <p>For example: <code>20</code></p>
+  </blockquote>
+
+  <h3>numberColorNegative <code>String</code></h3>
+  <p>Color of the number with negative value.</p>
+  <blockquote>
+    <p>For example: <code>"#f71539"</code></p>
+  </blockquote>
+
+  <h3>donutColorsNegative <code>Array of strings</code></h3>
+  <p>Color of the donut with negative number.</p>
+  <blockquote>
+    <p>1st string - the color gradient starts. For example: <code>"3081b9"</code></p>
+    <p>2nd string - the color gradient stops. For example: <code>"49dbe8"</code>. Use the same as 1st string if you want to get flat color.</p>
+  </blockquote>
+
+  <h3>donut2ndScale <code>Number</code></h3>
+  <p>Scales the second donut relatively to the first. If set “1”, the diameters of the both are the same. If set “2”, the second donut's diameter is two times bigger.</p>
+  <blockquote>
+    <p>For example: <code>1.2</code>, <code>1</code>, <code>2</code></p>
+  </blockquote>
+
+  <h3>donut2ndStroke</h3>
+  <p>The stroke of the second donut.</p>
+  <blockquote>
+    <p>To make same width as the first donut: <code>donutStroke/donut2ndScale</code></p>
+    <p>6 times smaller stroke example: <code>donutStroke/donut2ndScale/6</code></p>
+    <p>2 times bigger stroke example: <code>donutStroke/donut2ndScale*2</code></p>
+  </blockquote>
+
+
+
+  <!--
+  <h3>xxxxx <code>Number</code></h3>
+  <p>xxxxxx.</p>
+  <blockquote>
+    <p>For example: <code>xxxxxx</code></p>
+  </blockquote>
+
+  -->
+
+</div>
+
+
+
+
+
+
+<!-- section -->
+<h2 id="change-icons">How to change the icons</h2>
+
+<p>All project files use icon fonts generated with <a href="http://fontastic.me/" target="_blank">“Fontastic”</a> &ndash; free online icon font generator. To change the icons you need to make your own icon font &ndash; the process is simple with “Fontastic”.</p>
+
+<p><strong>Create the icon font:</strong></p>
+
+<ol>
+  <li>Create your free “Fontastic” account.</li>
+  <li>Login into <a href="http://app.fontastic.me/" target="_blank">http://app.fontastic.me/</a>.</li>
+  <li>Step SELECT: Select the icons you'd like to use.</li>
+  <li>Click “Modify Font” menu link and change “Font Name” to <strong>icon-font</strong>.</li>
+  <li>Step CUSTOMIZE: Map the icons to characters you'll use in Edge Animate project. Use characters “a”, “b”, “c” &ndash; these characters are used in projects.</li>
+  <li>Step PUBLISH: click DOWNLOAD button to get your icon font.</li>
+</ol>
+
+<p><strong>Replace the icon font:</strong></p>
+<ol>
+  <li>Unzip the file.</li>
+  <li>Copy the folder “fonts” and “styles.css” to project folder “icons” &ndash; replace the files.</li>
+  <li>Refresh the .html file and you'll see the new icons.</li>
+</ol>
+
+<p>Note: If you've mapped other characters than “a”, “b”, “c”, you'll need to change the code in <code>.an</code> file:</p>
+<ol>
+  <li>Open <code>.an</code> file.</li>
+  <li>Open Code window from main menu: Window > Code.</li>
+  <li>Look for <code>Stage</code> > <code>document.compositionReady</code> on the left sidebar.</li>
+  <li>In “elements” array look for values in “character” properties &ndash; these should be the characters you've mapped the icons to. Change them to the ones your icon font is using.</li>
+</ol>
+
+
+
+
+
+<!-- section -->
+<h2 id="multiple-compositions">Multiple Compositions in a page</h2>
+
+<p>To get multiple compositions in a page the <strong>HTML</strong> and <strong>JS</strong> file need to be hand-edited per the following instructions:</p>
+
+<p><strong>1. Duplicate these 3 files</strong> and add the "2" in the filename:</p>
+
+<div class="multiple_code">
+	<p><code>donut_charts_edge.js</code></p>
+	<p><code>donut_charts_edgeActions.js</code></p>
+	<p><code>donut_charts_edgePreload.js</code></p>
+</div>
+<p><img src="readme-files/img/multiple1.png" alt="" /></p>
+
+<p><strong>2. Change composition ID in them.</strong> Open these 3 new files in code editor and replace string <code>EDGE-1404005</code> to <code>EDGE-1404006</code> in all of them.</p>
+
+<p><strong>3. Edit the new Preload JS file.</strong> Additionally edit two lines in <code>donut_charts_edgePreload2.js</code> to point to the new files:</p>
+
+<div class="multiple_code">
+	<p><code>{ load: "donut_charts_edge.js"},</code></p>
+	<p><code>{ load: "donut_charts_edgeActions.js"}];</code></p>
+</div>
+<p><img src="readme-files/img/multiple3.png" alt="" /></p>
+
+<p><strong>4. Edit HTML file to include two compositions</strong></p>
+<ul>
+	<li><p>Duplicate the line <code>&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;donut_charts_edgePreload.js&quot;&gt;&lt;/script&gt;</code><br />Replace <code>src</code> to point to <code>donut_charts_edgePreload2.js</code></p></li>
+	<li><p>Duplicate the line <code>.edgeLoad-EDGE-1404005 { visibility:hidden; }</code><br />Replace CSS <code>class</code> pointer to <code>.edgeLoad-EDGE-1404006</code></p></li>
+	<li><p>Duplicate div <code>&lt;div id=&quot;Stage&quot; class=&quot;EDGE-1404005&quot;&gt;&lt;/div&gt;</code><br />Replace stage <code>ID</code> to <code>Stage2</code> and <code>class</code> to <code>EDGE-1404006</code></p></li>
+</ul>
+<p><strong>Note:</strong> It is important to rename the stage IDs in the HTML markup with a unique name to avoid conflicts.</p>
+
+<p>So the final HTML will look like this:</p>
+<p><img src="readme-files/img/multiple2.png" alt="" /></p>
+
+<p>Each <code>donut_charts_edgePreload.js</code> file causes the definition for a single composition to be included in the page. You can include multiple compositions by including multiple composition preload JS files:</p>
+
+<div class="multiple_code">
+	<p><code>&lt;!--Adobe Edge Runtime--&gt;</code></p>
+	<p><code>&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;donut_charts_edgePreload.js&quot;&gt;&lt;/script&gt;</code></p>
+	<p><code>&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;donut_charts_edgePreload2.js&quot;&gt;&lt;/script&gt;</code></p>
+	<p><code>&lt;!--Adobe Edge Runtime End--&gt;</code></p>
+</div>
+
+<p>Each composition requires a stage Element to attach to:</p>
+
+<div class="multiple_code">
+	<p><code>&lt;div id=&quot;Stage&quot; class=&quot;EDGE-1404005&quot;&gt;&lt;/div&gt;</code></p>
+	<p><code>&lt;div id=&quot;Stage2&quot; class=&quot;EDGE-1404006&quot;&gt;&lt;/div&gt;</code></p>
+</div>
+
+<p>donut_charts_edgePreload.js has the composition ID set to EDGE-1404005 at the end of the file:<br />
+<code>})(jQuery, AdobeEdge, "EDGE-1404005");</code></p>
+
+<p>donut_charts_edgePreload2.js has the composition ID set to EDGE-1404006 at the end of the file:<br />
+<code>})(jQuery, AdobeEdge, "EDGE-1404006");</code></p>
+
+<p><strong>Note:</strong> Additionally examples with multiple compositions are included in the folder <code>examples / multiple_compositions</code></p>
+
+
+
+
+<!-- section -->
+<h2 id="show-on-scroll">Trigger animation when the window is scrolled to Edge Animate file position</h2>
+
+<p>Note: working example is included in <code>examples/trigger-animation-onScroll</code> folder.</p>
+
+<p>If you want the animation to show up when the window is scrolled down, so that the whole div is vissible you have to:</p>		
+<ol>
+  <li>Open JS file with title ending <code>_edge.js</code></li>
+  <li>Find the line <code>Edge.launchComposition(compId);</code></li>
+  <li>Replace with this: 
+			<pre>
+var elem = $('.ID_OF_YOUR_STAGE');  /*--- replace ID_OF_YOUR_STAGE with your real id ---*/
+function isScrolledIntoView(elem) { /*--- Check if the div is in the vieport of the screen ---*/
+	var docViewTop = $(window).scrollTop();
+	var docViewBottom = docViewTop + $(window).height();
+	var elemTop = $(elem).offset().top;
+	var elemBottom = elemTop + $(elem).height();
+	return ((elemBottom >= docViewTop) &amp;&amp;
+	(elemTop &lt;= docViewBottom) &amp;&amp;
+	(elemBottom &lt;= docViewBottom) &amp;&amp;
+	(elemTop >= docViewTop));
+};
+function isScrolled() {
+	if (isScrolledIntoView(elem)) {
+		Edge.launchComposition(compId); /*--- Run The animation ---*/
+	}
+}
+$(window).on("scroll", isScrolled);</pre>
+  </li>
+  <li>Save the file.</li>
+</ol>
+
+<p>You can find the <code>ID_OF_YOUR_STAGE</code> in the same <code>_edge.js</code> file in the last line, for example: <code>})(jQuery, AdobeEdge, "EDGE-1404005");</code>. In this case the ID would be <code>EDGE-1404005</code></p>
+
+<p>Note: To avoid triggering animation before the whole div is fully vissible you have to set its width and height. Open HTML file and add CSS properties, for example:</p>
+
+<p><code>&lt;div id=&quot;Stage&quot; class=&quot;EDGE-1404005&quot; style=&quot;width: 100%; height: 500px;&quot;&gt;&lt;/div&gt;</code></p>
+
+
+
+
+<!-- section -->
+<h2 id="publishing">Publishing from Edge Animate</h2>
+<p>After you've done editing in Edge Animate, publish the project files:</p>
+<ol>
+  <li>From main menu: File > Publish</li>
+  <li>Project files are published into <code>publish</code> folder</li>
+</ol>
+<p>Projects in the package use Adobe Content Distribution Network (CDN) Hosting to speed up Animate composition delivery.</p>
+
+<h6>CDN Hosting</h6>
+
+<p>Compositions using the Adobe CDN all share a single URL for jQuery and the Edge Runtime. The browser caches the runtime, so the user only downloads the library once no matter how may Animate compositions they view, even if compositions are on different sites and produced by different authors.</p>
+
+<p>Don't use the CDN if your composition needs to run without an Internet connection or if you want to use your own hosting exclusively.</p>
+
+
+
+<!-- section -->
+<h2 id="mime">SVG files require proper web server MIME-type configuration</h2>
+<p>If SVG files don't show up on web, the server doesn't serve MIME types for SVG files correctly. You should configure server appropriately. There are several ways to do it, depending upon the server type, and your access to server settings.</p>
+
+<p>For example, in <strong>Apache server</strong> it's done by editing <code>.htaccess</code> configuration file that is hidden - make sure your FTP client shows hidden files. If your server does not have such a file, create a file and name it “.htaccess”, and associate the SVG file extensions with the correct MIME Type; if the file already exists, you can simply add the correct entries to it. The particular line you should add are:</p>
+
+<blockquote>
+  <code>AddType image/svg+xml svg</code><br />
+</blockquote>
+<p>The .htaccess file should be placed in the directory that contains the SVG file, or any parent directory. </p>
+
+<p>More on this subject: <a href="http://www.w3.org/services/svg-server/">http://www.w3.org/services/svg-server/</a></p>
+
+
+
+
+<!-- section -->
+<h2 id="ie">Notes on Internet Explorer</h2>
+<p>Although IE9+ browsers support CSS3 transforms and animations, they don't support them on SVG elements. So IE9+ browsers will show the final static SVG file (exactly the same as in other modern browsers) but without animation.</p>
+
+
+
+
+<!-- section -->
+<h2 id="notes">Notes</h2>
+<p><strong>Icons</strong> from <a href="http://fontawesome.io" target="_blank">“Font Awesome”</a> set made by Dave Gandy (<a href="http://opensource.org/licenses/mit-license.html" target="_blank">The MIT License</a>).</p>
+<p><strong>Icon fonts</strong> generated with <a href="http://fontastic.me/" target="_blank">“Fontastic”</a> &ndash; free online icon font generator.</p>
+<p><strong>Images</strong> are taken from <a href="http://pixabay.com" target="_blank">pixabay.com</a> (<a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank">Public Domain CC0 license</a>).</p>
+<p>The projects were produced using Adobe Edge Animate CC version 3.0.</p>
+
+
+
+
+
+<div class="footer">
+  <h2>Thank you!</h2>
+  <p>Thank you for purchasing my files. If you have any questions that are beyond the scope of this documentation, please feel free to email via my user page <a href="http://codecanyon.net/user/cesgra">contact form</a>. Thanks so much!</p>
+  <p class="credits">Updated: December 29, 2014 by cesgra. Email: <a href="mailto:cz.cesgra@yahoo.co.uk">cz.cesgra@yahoo.co.uk</a></p>
+</div>
+
+</div>
+
+<!-- Additional Links code -->
+<script>
+
+	var newlink = document.createElement("link");
+	newlink.setAttribute("rel", "stylesheet");
+	newlink.setAttribute("type", "text/css");
+	newlink.setAttribute("href", "http://dsgnblvd.com/envato/additional_assets/style.css");
+	document.getElementsByTagName("head").item(0).appendChild(newlink);
+
+</script>
+<div class="footer_links">
+	<a href="http://dsgnblvd.com/envato/edge-animate-svg-donut-charts/01.1.single-bar/donut_charts.html" class="btn">Live preview</a>
+	<a href="http://codecanyon.net/item/svg-donut-charts/8947507?ref=cesgra" class="btn">Buy this item</a>
+</div>
+<!-- Additional Links code: END -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2176248-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

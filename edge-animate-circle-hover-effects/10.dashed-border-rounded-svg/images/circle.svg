@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="120" viewBox="0 0 240 120">
+<defs>
+
+<style type="text/css" >
+<![CDATA[
+
+#c1 {
+  fill:none;
+  stroke: #ffffff; 
+  stroke-width: 6px;
+}
+#c2 {
+  fill:none;
+  stroke-dasharray: 10.6 9;
+  stroke-dasharray: 6 15;
+  stroke: #ffffff; 
+  stroke-width: 6px;
+  stroke-linecap: round;
+}
+
+
+]]>
+</style>
+
+</defs>
+
+<!-- <rect height="100%" width="100%" fill="#000" /> -->
+
+<g transform="translate(10,10)">
+  <circle id="c1" cx="50" cy="50" r="50" />
+</g>
+<g transform="translate(130,10)">
+  <circle id="c2" cx="50" cy="50" r="50" />
+</g>  
+
+
+</svg>
+
+

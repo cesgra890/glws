@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Spinning SVG Earth Globe 3D / Adobe Edge Animate</title>
+  <link rel="stylesheet" href="readme-files/css/style.css" />
+</head>
+<body>
+
+<div class="header-c">
+<div class="header">
+  <img src="readme-files/img/header-img.jpg" alt="" class="left" />
+  <h1 style="margin-bottom: 0;">Spinning SVG Earth Globe 3D</h1>
+  <h3>Adobe Edge animation</h3>
+</div>
+</div>
+
+<div class="main">
+<!-- section -->
+<div class="toc">
+  <p><a href="#description">Description</a></p>
+  <p><a href="#main">Main graphic elements</a></p>
+  <p><a href="#resizing">How to resize globe&rsquo;s elements</p>
+  <p><a href="#colors">How to change the colors of continents and sphere</a></p>
+  <p><a href="#presets">Presets</a></p>
+  <p><a href="#reflections">Presets for Reflections</a></p>
+  <p><a href="#hide-elements">Hide elements by editing SVG files</a></p>
+  <p><a href="#preloader">Preloader</a></p>
+  <p><a href="#fallback">Fallback poster image for legacy browsers</a></p>
+  <p><a href="#publishing">Publishing from Edge Animate</a></p>
+  <p><a href="#mime">SVG files require proper web server MIME-type configuration</a></p>
+  <p><a href="#gzip">Using Compressed SVG files (.svgz)</p>
+  <p><a href="#notes">Notes</a></p>
+</div>
+
+
+
+
+<!-- section -->
+<h2 id="description">Description</h2>
+<ul>
+  <li>Edge Animate project</li>
+  <li>Loop of smooth animation based on 90, 180 or 360 frames (3 versions)</li>
+  <li>3D globe simulation</li>
+  <li>Resolution independent scalable vector graphics (all elements are SVG files)</li>
+  <li>11 color presets of the globe (included in individual folders)</li>
+  <li>Easy to customize colors, transparency of elements (with or without Adobe Edge software), or just remove them</li>
+  <li>30 fps (frames per second) animation</li>
+  <li>Works on mobile devices</li>
+  <li>Included:
+    <ul>
+      <li>Edge Animate files (.an, JS, HTML, SVG)</li>
+      <li>Edge Animate templates (.antmpl)</li>
+      <li>Documentation</li>
+      <li>PSD helper</li>
+    </ul>    
+  </li>
+</ul>
+
+
+<!-- section -->
+<h2 id="main">Main graphic elements</h2>
+<p>All graphics are SVG vector files, located in “images” folder. In Adobe Edge Animate they reside in the <strong>“globe”</strong> symbol:</p>
+<img src="readme-files/img/an-inside.jpg" alt="" />
+
+<p><strong>reflections</strong> (reflections.svg file)</p>
+<img src="readme-files/img/an-reflections.jpg" alt="" />
+
+<p><strong>continents</strong> (globe-90fr.svg, globe-180fr.svg or globe-360fr.svg file)</p>
+<img src="readme-files/img/an-continents.jpg" alt="" />
+
+<p><strong>outer-shadow</strong> (outer-shadow.svg file)</p>
+<img src="readme-files/img/an-outer-shadow.jpg" alt="" />
+
+<p><strong>sphere</strong> (sphere.svg file)</p>
+<img src="readme-files/img/an-sphere.jpg" alt="" />
+
+<p>In Adobe Edge Animate project you can modify position of the globe, add additional graphics, modify opacity, display property (on/off) of the elements. Or move the globe to another Edge Animate project. If you want to change colors of the elements, open respective SVG file in your favorite code editor. Instructions for that below.</p>
+
+
+
+<!-- section -->
+<h2 id="resizing">How to resize globe&rsquo;s elements</h2>
+<h3>Global resizing</h3>
+<p>If you want to resize the globe with all the elements <strong>altogether</strong>, do it in Edge Animate:</p>
+<ul>
+  <li>Open <code>globe_30fps.an</code></li>
+  <li>On main Stage click on “globe” element to select it</li>
+  <li>In Properties panel on the left there's “Position and Size” section located</li>
+  <li>There you can edit <code>width</code>, <code>height</code>, <code>X</code> and <code>Y</code> position</li>
+</ul>
+<img src="readme-files/img/resizing.png" alt="" />
+
+<h3>Fine-tuning individual elements</h3>
+<p>You might face situations when you just want to alter <strong>individual</strong> elements&rsquo; dimensions, so fine-tuning of SVG elements&rsquo;  is needed.</p>
+
+
+<p style="padding-top: 1.3em;"><code style="font-size: 150%;">&lt;ellipse&gt;</code> Used in <code>sphere.svg</code></p>
+<img src="readme-files/img/ellipse-svg.png" alt="" />
+<ul>
+  <li><code>rx</code>, <code>ry</code>: ellipse horizontal and vertical radius (width/height at the same time). For example: <code>97.4</code></li>
+  <li><code>cx</code>, <code>cy</code>: X, Y position of ellipse&rsquo;s center. For example: <code>100</code> or <code>50%</code></li>
+</ul>
+<p>The ellipse is centered in <code>cx</code>, <code>cy</code> like the circle. But the radius in the x and y directions are specified by two attributes, not one: The <code>rx</code> and <code>ry</code> attributes. As you can see, the rx attribute has a higher value than the ry attribute, making the ellipse wider than it is tall. Setting the rx and ry attributes the same number would result in a regular circle.</p>
+
+
+<!-- section -->
+<h2 id="colors">How to change the colors of continents and sphere</h2>
+
+<p>Front and Back continents are in globe-90fr.svg file (or SVG with "180fr" or "360fr" in filename), which is SVG spritesheet. Animation is done by showing only relevant part of this spritesheet that contains all (90, 180 or 360) frames of globe rotation loop:</p>
+<img src="readme-files/img/svg-sprite.jpg" alt="" />
+
+<p>In your favorite code editor open SVG file (from “images” folder) named <strong>globe-90fr.svg</strong> (or SVG with "180fr" or "360fr" in filename).</p>
+<p>Almost all Front and Back continents are filled with radial gradients (in some files - pure solid color). Radial gradients are gradients in which the colors change circularly (not linearly).</p>
+
+<h3>globe-90fr.svg <small>or SVG with "180fr" or "360fr" in filename</small></h3>
+<p>&lt;radialGradient <strong>id</strong>=<strong>"fr"</strong> &gt; is for front continents. &lt;radialGradient <strong>id</strong>=<strong>"bck"</strong> &gt; is for back continents.</p>
+<img src="readme-files/img/gradients-svg-photoshop1.png" alt="" />
+<p> The &lt;radialGradient&gt;-element has nested &lt;stop&gt;-elements. The &lt;radialGradient&gt;-element controls the direction of the gradient. The &lt;stop&gt;-elements control the colors used in the gradient, how far into the shape the colors start and stop, plus the opacity of the gradient. </p>
+
+<p>Here is a list of the <strong>&lt;stop&gt;</strong> element attributes:</p>
+<dl>
+  <dt><label>offset</label></dt>
+  <dd>How far into the shape this color starts (if the first color of the gradient) or stops (if the last color of the gradient). Specified as percentages of the shape the gradient is applied to.</dd>
+  <dt><label>stop-color</label></dt>
+  <dd>The color of this stop-point. The color the gradient changes from / to.</dd>
+  <dt><label>stop-opacity</label></dt>
+  <dd>The opacity of the color of this stop-point. If opacity changes from one stop-point with 1 to another with opacity 0, then the color will gradually become more transparent.</dd>
+</dl>
+
+<p>&lt;stop&gt; element attributes' equivalents in Photoshop:</p>
+<blockquote>
+<p>
+  offset > Location<br />
+  stop-color > Color<br />
+  stop-opacity > Opacity
+</p>
+</blockquote>
+
+<p>Note: in Photoshop opacity values are expressed as percentage, so you'll have to convert them when placing into SVG (divide by 100). For example, 50% in Photoshop will be 0.5 in SVG.</p>
+
+<p>More on SVG Gradients: <a href="http://tutorials.jenkov.com/svg/svg-gradients.html">http://tutorials.jenkov.com/svg/svg-gradients.html</a></p>
+
+<h6>Solid colors instead of gradients</h6>
+<p>If you prefer to use solid colors, not gradients. Front continents for example:</p>
+<ol>
+  <li>Open SVG file (for example globe-90fr.svg) in code editor.</li>
+  <li>In <code>&lt;style&gt;</code> section find the line <code>.fr {fill:url(#fr);}</code><br />It uses reference to gradient ID named <strong>"fr"</strong>. Instead of <strong>url(#fr)</strong> use Hex color code, for example <strong>fill:#000000</strong>.</li>
+  <li>So the final line should look like this: <code>.fr {fill:#000000;}</code></li>
+  <li>Save the file.</li>
+</ol>
+
+<p>Preset #11 (solid) uses SVG files with Outer shadow, Reflections hidden. In addition, Continents and Sphere are filled with solid colors.</p>
+
+
+<h3>sphere.svg</h3>
+<p>Similar SVG structure like in in globe-90fr.svg. Also uses radialGradient.</p>
+	
+<h3>globes.psd</h3>
+
+<p>Additionally I have made and included PSD file (globes.psd) with all the globes that can be found in this package. There you can tweak gradients by playing with colors and see the results instantly. Then just grab the color codes into SVG files.</p>
+
+<ol>
+  <li>Open globes.psd</li>
+  <li>Select element's layer (named <strong>continents.front</strong>, <strong>continents.back</strong> or <strong>sphere</strong>) </li>
+  <li>From Photoshop menu choose Layer > Layer Style > Blending Options > Gradient Overlay</li>
+  <li>Click on "Gradient"</li>
+  <li>Click on "Stops" (red boxed in picture below)</li>
+  <li>Modify values, drag them to reposition</li>
+</ol>
+
+<img src="readme-files/img/gradients-svg-photoshop2.png" alt="" />
+
+
+<!-- section -->
+<h2 id="presets">11 Presets</h2>
+<p>01.white-blue</p>
+<img src="readme-files/img/globes1.jpg" alt="" />
+<p>02.blue-green</p>
+<img src="readme-files/img/globes2.jpg" alt="" />
+<p>03.blue-blue</p>
+<img src="readme-files/img/globes3.jpg" alt="" />
+<p>04.green</p>
+<img src="readme-files/img/globes4.jpg" alt="" />
+<p>05.blue-yellow</p>
+<img src="readme-files/img/globes5.jpg" alt="" />
+<p>06.white-orange</p>
+<img src="readme-files/img/globes6.jpg" alt="" />
+<p>07.black-yellow</p>
+<img src="readme-files/img/globes7.jpg" alt="" />
+<p>08.dark-grey-yellow</p>
+<img src="readme-files/img/globes8.jpg" alt="" />
+<p>09.grey</p>
+<img src="readme-files/img/globes9.jpg" alt="" />
+<p>10.blue-blue-white</p>
+<img src="readme-files/img/globes10.jpg" alt="" />
+<p>11.solid</p>
+<img src="readme-files/img/globes11.jpg" alt="" />
+
+
+<!-- section -->
+<h2 id="reflections">Presets for Reflections</h2>
+<p>There are 4 predefined reflections' gradients in file <strong>reflections.svg</strong>.</p>
+<img src="readme-files/img/reflections.jpg" alt="" />
+<p>By default the shape of reflections element uses gradient with ID named "gr1". The other are gr2, gr3 and gr4.</p>
+<img src="readme-files/img/reflections-code.png" alt="" />
+<p>If you want to select another one:</p>
+<ol>
+  <li>Open reflections.svg in code editor</li>
+  <li>Find the line with code <code>&lt;path style="fill:url(#<strong>gr1</strong>)"...&gt;</code></li>
+  <li>Change <strong>gr1</strong> to <strong>gr2</strong>, <strong>gr3</strong> or <strong>gr4</strong>.</li>
+  <li>Save the file.</li>
+</ol>
+<p>Additionally you may alter gradient stops' opacity, colors or create your own gradient.</p>
+
+<!-- section -->
+<h2 id="hide-elements">Hide elements by editing SVG files</h2>
+
+<h6>Hide Back continents</h6>
+<ol>
+  <li>Open SVG file globe-90fr.svg (or SVG with "180fr" or "360fr" in filename)</li>
+  <li>In <code>&lt;style&gt;</code> section find the line <code>.bck {fill:url(#bck);}</code><br />It uses <strong>"bck"</strong> class to point to Back continents.</li>
+  <li>Replace <code>fill:url(#bck)</code> with <code>display:none</code> CSS property</li>
+  <li>The final line should look like this: <code>.bck {display:none;}</code></li>
+  <li>Save the file.</li>
+</ol>
+
+<h6>Hide Sphere, Outer shadow</h6>
+<ol>
+  <li>Open SVG file sphere.svg (or outer-shadow.svg)</li>
+  <li>Find the line that begins with <code>&lt;ellipse</code>...</li>
+  <li>Replace <code>fill:url(#rg);</code> with <code>display:none</code> CSS property</li>
+  <li>Save the file.</li>
+</ol>
+
+<h6>Hide Reflections</h6>
+<ol>
+  <li>Open SVG file reflections.svg</li>
+  <li>Find the line that begins with <code>&lt;path</code>...</li>
+  <li>Replace <code>fill:url(#gr1);</code> with <code>display:none</code> CSS property</li>
+  <li>Save the file.</li>
+</ol>
+
+<p>Preset #11 (solid) uses SVG files with Outer shadow, Reflections hidden. In addition, Continents and Sphere are filled with solid colors.</p>
+
+
+
+<!-- section -->
+<h2 id="preloader">Preloader</h2>
+<p>Edge Animate project uses one of the Edge native preloaders. To edit or replace:</p>
+<ol>
+  <li>From main Menu select View > Preloader Stage</li>
+  <li>Click “Insert Preloader Clip-Art...” button on the left.</li>
+  <li>Select from the list.</li>
+</ol>  
+<img src="readme-files/img/preloader.png" alt="" />
+
+
+
+<!-- section -->
+<h2 id="fallback">Fallback poster image for legacy browsers</h2>
+<p>When visitors view your content in a legacy (older) web browser, the poster image is displayed. I've included poster images in every Edge Animate project (.an) in this package. To view it:</p>
+<ol>
+  <li>Select from main Menu: View > Down-level Stage</li>
+</ol>  
+
+<p>Read more on that here: <a href="http://helpx.adobe.com/edge-animate/using/target-older-browsers.html">http://helpx.adobe.com/edge-animate/using/target-older-browsers.html</a></p>
+
+
+
+
+<!-- section -->
+<h2 id="publishing">Publishing from Edge Animate</h2>
+<p>After you've done editing in Edge Animate, publish the project files:
+<ol>
+  <li><strong>Choose Published Content</strong>. From main menu: File > Publish Settings... > Publish Target
+	
+<ul>
+	<li>Web (optimized HTML)</li>
+	<li>Animate Deployment Package (.oam) for Adobe Muse</li>
+	<li>iBooks / OS X Dashboard Widget (.wdgt)</li>
+</ul>	
+	</li>
+  <li><strong>Publish</strong>. From main menu: File > Publish</li>
+  <li>Project files are published into <code>publish</code> folder</li>
+</ol>
+
+<h6>CDN Hosting</h6>
+
+<p>In this bundle projects published for <strong>web</strong> use Adobe Content Distribution Network (CDN) Hosting to speed up Animate composition delivery - JS files <code>edge.*.*.*.min.js</code> and <code>jquery-*.*.*.min.js</code> are loaded externally from public Adobe server.</p>
+
+<p>Compositions using the Adobe CDN all share a single URL for jQuery and the Edge Runtime. The browser caches the runtime, so the user only downloads the library once no matter how may Animate compositions they view, even if compositions are on different sites and produced by different authors.</p>
+
+<p>Don't use the CDN if your composition needs to run without an Internet connection or if you want to use your own hosting exclusively.</p>
+
+
+
+
+<!-- section -->
+<h2 id="mime">SVG files require proper web server MIME-type configuration</h2>
+<p>If SVG files don't show up on web, the server doesn't serve MIME types for SVG files correctly. You should configure server appropriately. There are several ways to do it, depending upon the server type, and your access to server settings.</p>
+
+<p>For example, in <strong>Apache server</strong> it's done by editing <code>.htaccess</code> configuration file that is hidden - make sure your FTP client shows hidden files. If your server does not have such a file, create a file and name it “.htaccess”, and associate the SVG file extensions with the correct MIME Type; if the file already exists, you can simply add the correct entries to it. The particular line you should add are:</p>
+
+<blockquote>
+  <code>AddType image/svg+xml svg</code><br />
+</blockquote>
+<p>The .htaccess file should be placed in the directory that contains the SVG file, or any parent directory. </p>
+
+<p>More on this subject: <a href="http://www.w3.org/services/svg-server/">http://www.w3.org/services/svg-server/</a></p>
+
+
+
+<!-- section -->
+<h2 id="gzip">Using Compressed SVG files (.svgz)</h2>
+
+<p>SVG images are well suited for lossless data compression. When an SVG image has been compressed with <strong>gzip</strong> algorithm, it is referred to as an “SVGZ” image and uses the corresponding <code>.svgz</code> filename extension. An <strong>SVGZ</strong> file is typically 20 to 50 percent of the original size.</p>
+
+<p>Because Edge Animate interface doesn't support compressed SVG files, all project files here are using uncompressed SVG. But I'd strongly suggest you to compress large SVG files for bandwidth matters in final stage of project development. Particularly files with continents' shapes. For example, uncompressed <code>globe_90fr.svg</code> file weights 1.15 MB, and only 300 KB after compression. It's even 4 times smaller with compression ratio up to 74%. See table below:</p>
+
+<table style="margin-bottom: 3em;">
+  <tr>
+    <th scope="col">File</th>
+    <th scope="col">.svgz (Compressed)</th>
+    <th scope="col">.svg (Uncompressed)</th>
+  </tr>
+  <tr>
+    <td>globe_90fr</td>
+    <td>300 KB</td>
+    <td>1,150 KB</td>
+  </tr>
+  <tr>
+    <td>globe_180fr</td>
+    <td>600 KB</td>
+    <td>2,300 KB</td>
+  </tr>
+  <tr>
+    <td>globe_360fr</td>
+    <td>1,200 KB</td>
+    <td>4,600 KB</td>
+  </tr>
+</table>
+
+
+<p><strong>Replace SVG with SVGZ</strong>, let's take for example <code>globe_90fr.svg</code>:</p>
+<ol>
+  <li>After you have done all modifications in the file</li>
+  <li>GZIP file with file archiver that supports gzip compression (<a href="http://www.7-zip.org/" target="_blank">7-Zip</a>, <a href="http://www.kekaosx.com/en/" target="_blank">Keka</a> or else)</li>
+  <li>Replace extension of newly created file from .svg to .svgz: <code>globe_90fr.svgz</code></li>
+  <li>Open <code>globe_30fps_edge.js</code></li>
+  <li>Replace <code>globe_90fr.svg</code> with <code>globe_90fr.svgz</code></li>
+  <li>Save the file</li>
+  <li>Test on the web, not locally (see “Note” below)</li>
+</ol>
+
+<p>All <code>images</code> folders also have compressed version of SVG file (globe_90fr.svgz). So skip first two steps if you don't wish to modify the continents.</p>
+
+<p><strong>Note:</strong> Adobe Edge Animate (as for version 3.0) can't read .svgz files, so they won't appear in “Library” Panel. And most of the browsers doesn't read .svgz files locally (Chrome 33.0.1750.117 does), but read them from web.</p>
+
+<p>Server configuration (read section: <a href="#mime">SVG files require proper web server MIME-type configuration</a>) requires two additional lines added:</p>
+
+<p>For Apache server (lines 2 and 3):</p>
+<blockquote>
+  <code>AddType image/svg+xml svg</code><br />
+  <code>AddType image/svg+xml svgz</code><br />
+  <code>AddEncoding x-gzip .svgz</code>
+</blockquote>
+<p>Line #1 is for uncompressed SVG files (with <code>*.svg</code> file extension). #2-3 lines is for gzip-compressed SVG files (<code>*.svgz</code>).</p>
+
+
+
+
+
+<!-- section -->
+<h2 id="notes">Notes</h2>
+<p>The original map is taken from the NASA website as a source.</p>
+<p>The projects were produced using Adobe Edge Animate CC version 3.0.</p>
+
+<div class="footer">
+  <h2>Thank you!</h2>
+  <p>Thank you for purchasing my files. If you have any questions that are beyond the scope of this documentation, please feel free to email via my user page <a href="http://codecanyon.net/user/cesgra">contact form</a>. Thanks so much!</p>
+  <p class="credits">Updated: January 2, 2015 by cesgra. Email: <a href="mailto:cz.cesgra@yahoo.co.uk">cz.cesgra@yahoo.co.uk</a></p>
+</div>
+
+
+</div>
+
+<!-- Additional Links code -->
+<script>
+
+	var newlink = document.createElement("link");
+	newlink.setAttribute("rel", "stylesheet");
+	newlink.setAttribute("type", "text/css");
+	newlink.setAttribute("href", "http://dsgnblvd.com/envato/additional_assets/style.css");
+	document.getElementsByTagName("head").item(0).appendChild(newlink);
+
+</script>
+<div class="footer_links">
+	<a href="http://dsgnblvd.com/envato/edge-animate-svg-globes-pack/2.3d/01.white-blue/globe_30fps.html" class="btn">Live preview</a>
+	<a href="http://codecanyon.net/item/spinning-svg-earth-globes-flat-and-3d/7200338?ref=cesgra" class="btn">Buy this item</a>
+</div>
+<!-- Additional Links code: END -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2176248-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

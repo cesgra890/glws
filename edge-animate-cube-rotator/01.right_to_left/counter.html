@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<title>cube rotator / 01.right_to_left</title>
+<!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="counter_edgePreload.js"></script>
+    <style>
+        .edgeLoad-EDGE-11218185 { visibility:hidden; }
+    </style>
+<!--Adobe Edge Runtime End-->
+
+<link href="../assets/edge-animation-handler.css" rel="stylesheet" />
+<script> var id = 1; </script>
+<script type="text/javascript" src="../assets/edge-navigation.js"></script>
+</head>
+<body style="margin:0;padding:0;">
+	<div id="Stage" class="EDGE-11218185">
+	</div>
+<!-- controls -->
+<div class="controls">
+
+  <script> build_navigation(); </script>
+
+    <div class="title">
+      <p><strong>Cube Rotator</strong></p>
+      <p class="sub">Adobe Edge templates. Example 1/4</p>
+    </div>
+    <div class="buy"><a href="http://codecanyon.net/item/cube-rotator/8695800?ref=cesgra" class="button" target="_blank">Buy this item</a></div>
+
+  <div class="info">
+    Note: You can modify colors and opacity of more elements than this preview might demonstrate.
+  </div>
+
+<!--
+  <div>
+    <strong>Customize colors</strong>
+    <button id="split" onclick="colors_toggle(this);" data-value="off">Switch On</button>
+  </div>
+-->
+
+  <div id="stage-bg-color">
+    <span class="label">Background color</span>
+    <!-- value: default Stage background-color -->
+    <input class="color" id="color" value="0E83CD" onchange="
+    stage_clr = '#'+this.color;
+    document.querySelector('#Stage').style.backgroundColor = stage_clr;
+    document.querySelector('#big-nav-btn').style.color = stage_clr;
+    ">
+  </div>
+
+  <!-- <div id="additional-colors" style="display: none;"> -->
+  <div id="additional-colors">
+    <div>
+      <span class="label">Text color</span>
+      <input class="color" id="text_clr" value="FFFFFF" onchange="
+      text_clr = '#'+this.color;
+      update_text_clr();">
+    </div>
+    <div>
+      <span class="label">Front rectangle</span>
+      <input class="color" id="rect_clr" value="1F2128" onchange="
+      rect_clr = '#'+this.color;
+      update_rect_clr();">
+    </div>
+    <div>
+      <span class="label">Appearing: <span class="tooltip" title="Appears from this opacity" id="rect_appears_from_opacity">0.50</span></span>
+      <input class="color" id="rect_appears_from_clr" value="1F2128" onchange="
+      rect_appears_from_clr = '#'+this.color;
+      update_rect_appears_from_clr();">
+    </div>
+    <div>
+      <span class="label">Fading: <span class="tooltip" title="Fades to this opacity" id="rect_fades_to_opacity">0.90</span></span>
+      <input class="color" id="rect_fades_to_clr" value="000000" onchange="
+      rect_fades_to_clr = '#'+this.color;
+      update_rect_fades_to_clr();">
+    </div>
+<!--
+    <div>
+      <span class="label">From this opacity</span>
+      <input type="range" class="range" id="" min="0" max="100" value="50" onchange="update_rect_appears_from_opacity(this.value);" >
+      <input type="text" class="text" id="" value="100" disabled="disabled" />
+    </div>
+    <div>
+      <span class="label">To this opacity</span>
+      <input type="range" class="range" id="" min="0" max="100" value="90" onchange="update_rect_fades_to_opacity(this.value);" >
+      <input type="text" class="text" id="" value="100" disabled="disabled" />
+    </div>
+-->
+
+    <p style="margin-top: 2em;">Color presets:</p>
+    <div class="presets">
+      <a href="#" onclick="preset('1'); return false;" class="current">1</a>
+      <a href="#" onclick="preset('2'); return false;">2</a>
+      <a href="#" onclick="preset('3'); return false;">3</a>
+      <a href="#" onclick="preset('4'); return false;">4</a>
+      <a href="#" onclick="preset('5'); return false;">5</a>
+      <a href="#" onclick="preset('6'); return false;">6</a>
+      <a href="#" onclick="preset('7'); return false;">7</a>
+      <a href="#" onclick="preset('8'); return false;">8</a>
+      <a href="#" onclick="preset('9'); return false;">9</a>
+      <a href="#" onclick="preset('10'); return false;">10</a>
+      <a href="#" onclick="preset('11'); return false;">11</a>
+      <a href="#" onclick="preset('12'); return false;">12</a>
+      <a href="#" onclick="preset('13'); return false;">13</a>
+      <a href="#" onclick="preset('14'); return false;">14</a>
+      <a href="#" onclick="preset('15'); return false;">15</a>
+      <a href="#" onclick="preset('16'); return false;">16</a>
+      <a href="#" onclick="preset('17'); return false;">17</a>
+      <a href="#" onclick="preset('18'); return false;">18</a>
+      <a href="#" onclick="preset('19'); return false;">19</a>
+      <a href="#" onclick="preset('20'); return false;">20</a>
+      <a href="#" onclick="preset('21'); return false;">21</a>
+      <a href="#" onclick="preset('22'); return false;">22</a>
+      <a href="#" onclick="preset('23'); return false;">23</a>
+      <a href="#" onclick="preset('24'); return false;">24</a>
+    </div>
+
+    <div style="margin-top: 2em;">
+    	<button onclick="i=3; ii=2; document.querySelector('#restart').style.display = 'block'; update_digits();return false;" id="end">End animation</button>
+    	<button onclick="restart(); this.style.display = 'none'; document.querySelector('#end').style.display = 'block'; return false;" style="display: none;" id="restart">Restart</button>
+    </div>
+
+  </div>
+
+</div>
+<!-- colors_toggle -->
+<script> build_next_nav(); </script>
+<script>
+
+stage_clr = '#'+document.querySelector('#color').value;
+
+function initial_colors() {
+  // stage_clr = "#0E83CD";
+  rect_clr  = "#1F2128";
+  text_clr = "#FFFFFF";
+
+  rect_appears_from_clr = "#1F2128";
+  rect_appears_from_opacity = '0.5';
+
+  rect_fades_to_clr = "#000000";
+  rect_fades_to_opacity = '0.9';
+
+}
+
+initial_colors();
+
+function colors_toggle(t){
+
+  if (t.getAttribute('data-value') == 'off') {
+    document.querySelector("#additional-colors").style.display = 'block';
+    //set new colors
+      text_clr = '#'+document.querySelector('#text_clr').value;
+      rect_clr = '#'+document.querySelector('#rect_clr').value;
+      rect_appears_from_clr = '#'+document.querySelector('#rect_appears_from_clr').value;
+      rect_fades_to_clr = '#'+document.querySelector('#rect_fades_to_clr').value;
+    update_additional_elements();
+    t.setAttribute("data-value","on"); 
+    t.innerHTML = 'Switch Off'; // ---- on
+  } else {
+    document.querySelector("#additional-colors").style.display = 'none';
+    //set initial colors
+    initial_colors();
+    update_additional_elements();
+    t.setAttribute("data-value","off"); 
+    t.innerHTML = 'Switch On'; // ---- off
+  }
+}
+  
+function update_additional_elements() {
+    update_text_clr();
+    // update_rect_clr();
+    // update_rect_appears_from_clr();
+    // update_rect_fades_to_clr();
+}
+function update_text_clr()          {
+  document.querySelector('#Stage_box_Text').style.color = text_clr;
+  document.querySelector('#Stage_box_TextNew').style.color = text_clr;
+}
+function update_rect_clr()          {
+  // document.querySelector('#Stage_box_Rectangle').style.backgroundColor = rect_clr;
+  // document.querySelector('#Stage_box_RectangleNew').style.backgroundColor = rect_clr;
+}
+function update_rect_appears_from_clr()          {
+  // document.querySelector('#Stage_box_RectangleNew').style.backgroundColor = rect_appears_from_clr;
+}
+function update_rect_fades_to_clr()          {
+  // document.querySelector('#Stage_box_Rectangle').style.backgroundColor = rect_fades_to_clr;
+}
+function update_digits()          {
+  document.querySelector('#Stage_box_Text').innerHTML = i;
+  document.querySelector('#Stage_box_TextNew').innerHTML = ii;
+}
+/*
+function update_rect_appears_from_opacity(opct)          {
+  rect_appears_from_opacity = parseInt(opct)/100;
+  console.log(rect_appears_from_opacity);
+  document.querySelector('#Stage_box_RectangleNew').style.opacity = ""+rect_appears_from_opacity;
+}
+function update_rect_fades_to_opacity(opct)          {
+  rect_fades_to_opacity = parseInt(opct)/100;
+  document.querySelector('#Stage_box_Rectangle').style.opacity = ""+rect_fades_to_opacity;
+}
+*/
+
+
+  
+</script>
+<!-- colors_toggle: END -->
+<script type="text/javascript" src="../assets/edge-animation-handler.js"></script>
+<script type="text/javascript" src="../assets/jscolor/jscolor.js"></script>
+<!-- controls END -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2176248-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<title>06.white-orange / Spinning SVG Earth Globe 3D (Edge Animate)</title>
+<!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="globe_30fps_edgePreload.js"></script>
+    <style>
+        .edgeLoad-EDGE-10260560 { visibility:hidden; }
+    </style>
+<!--Adobe Edge Runtime End-->
+
+<link href="../assets/edge-animation-handler.css" rel="stylesheet" />
+</head>
+<body style="margin:0;padding:0;">
+  <div class="title">
+    <strong>Spinning SVG Earth Globe 3D &ndash; 11 Presets (Edge Animate)</strong>
+      <div class="buy">
+        <a href="http://codecanyon.net/item/spinning-earth-globe/7200338?ref=cesgra" class="button" target="_blank">Buy this item</a>
+      </div>
+  </div>
+	<div id="Stage" class="EDGE-10260560"><code>06.white-orange</code>
+	</div>
+<!-- controls -->
+<div class="controls">
+  
+  <div class="nav-container">
+    <select id="nav" name="nav" onchange="navigateTo(this,'window',false);">
+      <option value="../01.white-blue/globe_30fps.html">01.white-blue</option>
+      <option value="../02.blue-green/globe_30fps.html">02.blue-green</option>
+      <option value="../03.blue-blue/globe_30fps.html">03.blue-blue</option>
+      <option value="../04.green/globe_30fps.html">04.green</option>
+      <option value="../05.blue-yellow/globe_30fps.html">05.blue-yellow</option>
+      <option value="../06.white-orange/globe_30fps.html" selected>06.white-orange</option>
+      <option value="../07.black-yellow/globe_30fps.html">07.black-yellow</option>
+      <option value="../08.dark-grey-yellow/globe_30fps.html">08.dark-grey-yellow</option>
+      <option value="../09.grey/globe_30fps.html">09.grey</option>
+      <option value="../10.blue-blue-white/globe_30fps.html">10.blue-blue-white</option>
+      <option value="../11.solid/globe_30fps.html">11.solid</option>
+    </select>
+    <div class="nav-fwd-bck">
+      <a href="../07.black-yellow/globe_30fps.html" class="button">next</a>
+    </div>
+  </div>
+
+  <div style="padding-bottom: 0;">
+    <strong>Main elements:</strong>
+  </div>
+
+<div class="opacity">
+  <div>
+    Continents<br />
+    <input type="range" class="range" id="in_continents" name="continents" min="0" max="100" value="100" onchange="updateInput(this.value, this.name)" >
+    <input type="text" class="text" name="is" id="continents_display" value="100" disabled="disabled" />
+    </div>
+  <div>
+    Reflections<br />
+    <input type="range" class="range" id="in_reflections" name="reflections" min="0" max="100" value="100" onchange="updateInput(this.value, this.name)" >
+    <input type="text" class="text" name="is" id="reflections_display" value="100" disabled="disabled" />
+  </div>
+  <div>
+    Sphere<br />
+    <input type="range" class="range" id="in_sphere" name="sphere" min="0" max="100" value="100" onchange="updateInput(this.value, this.name)" >
+    <input type="text" class="text" name="is" id="sphere_display" value="100" disabled="disabled" />
+  </div>
+  <div>
+    Outer shadow<br />
+    <input type="range" class="range" id="in_outer-shadow" name="outer-shadow" min="0" max="100" value="100" onchange="updateInput(this.value, this.name)" >
+    <input type="text" class="text" name="is" id="outer-shadow_display" value="100" disabled="disabled" />
+  </div>
+</div>
+
+  <div class="reflections">
+    <strong>Reflections:</strong> 
+    <a href="#" id="t1" onclick="reflections('reflections','t','1');" class="t on">1</a>
+    <a href="#" id="t2" onclick="reflections('reflections2','t','2');" class="t">2</a>
+    <a href="#" id="t3" onclick="reflections('reflections3','t','3');" class="t">3</a>
+    <a href="#" id="t4" onclick="reflections('reflections4','t','4');" class="t">4</a>
+    <a href="#" id="t5" onclick="reflections('reflections5','t','5');" class="t">5</a>
+    <a href="#" id="t6" onclick="reflections('reflections6','t','6');" class="t">6</a>
+  </div>
+  <div>
+    <strong>Animation:</strong>
+  	<button id="play" onclick="vc_toggle(this);">Stop</button>
+  </div>
+
+  <div>
+    <strong>Stage background:</strong>
+    <a href="#" id="s1" onclick="stageOn('s','1');" class="s on">on</a>
+    <a href="#" id="s2" onclick="stageOff('s','2');" class="s">off</a>
+  </div>
+  <div id="stage-bg-color">
+    <!-- value: default Stage background-color -->
+    <input class="color" id="color" value="ffffff" onchange="document.querySelector('#Stage').style.backgroundColor = '#'+this.color">
+  </div>
+
+  <div class="info">    
+    Note: Colors and dimensions of globe elements can be easily changed by editing SVG files internally. The procedure is described in documentation.
+  </div>
+  
+</div>
+<script type="text/javascript" src="../assets/edge-animation-handler.js"></script>
+<script type="text/javascript" src="../assets/jscolor/jscolor.js"></script>
+<script>
+AdobeEdge.bootstrapCallback(function() {
+
+  function setParams() {
+
+/*
+    var continents = 0;
+    document.querySelector('#Stage_globe_continents').style.opacity = continents/100;
+    document.querySelector('#in_continents').value = continents;
+
+    var sphere = 0;
+    document.querySelector('#Stage_globe_sphere').style.opacity = sphere/100;
+    document.querySelector('#in_sphere').value = sphere;
+
+    var reflections = 0;
+    document.querySelector('#Stage_globe_reflections').style.opacity = reflections/100;
+    document.querySelector('#in_reflections').value = reflections;
+
+    var outerShadow = 0;
+    document.querySelector('#Stage_globe_outer-shadow').style.opacity = outerShadow/100;
+    document.querySelector('#in_outer-shadow').value = outerShadow;
+*/
+
+  }
+  window.setTimeout(setParams,0);
+
+});  
+</script>
+<!-- controls END -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2176248-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>

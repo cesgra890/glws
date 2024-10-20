@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<title>12.stripes / Spinning SVG Earth Globe Flat (Edge Animate)</title>
+<!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="globe_edgePreload.js"></script>
+    <style>
+        .edgeLoad-EDGE-10260560 { visibility:hidden; }
+    </style>
+<!--Adobe Edge Runtime End-->
+
+    <style>
+        .continents {
+          -webkit-border-radius: 50%;
+           -khtml-border-radius: 50%;
+             -moz-border-radius: 50%;
+                  border-radius: 50%;
+-webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(0,0,0,1)), color-stop(1, rgba(0,0,0,1)));
+        }
+    </style>
+<link href="../assets/edge-animation-handler.css" rel="stylesheet" />
+</head>
+<body style="margin:0;padding:0;">
+  <div class="title">
+    <strong>Spinning SVG Earth Globes Flat (33 presets)</strong>
+      <div class="buy">
+        <a href="http://codecanyon.net/item/spinning-svg-earth-globes-flat-and-3d/7200338?ref=cesgra" class="button" target="_blank">Buy this item</a>
+      </div>
+  </div>
+	<div id="Stage" class="EDGE-10260560"><code class="white">12.stripes</code>
+	</div>
+<!-- controls -->
+<div class="controls">
+  
+  <div class="nav-container">
+    <select id="nav" name="nav" onchange="navigateTo(this,'window',false);">
+      <option value="../01.white-blue/globe.html">01. white blue</option>
+      <option value="../02.blue-green/globe.html">02. blue green</option>
+      <option value="../03.blue/globe.html">03. blue</option>
+      <option value="../04.green/globe.html">04. green</option>
+      <option value="../05.blue-yellow/globe.html">05. blue yellow</option>
+      <option value="../06.lemonlight-orange/globe.html">06. lemonlight orange</option>
+      <option value="../07.black-yellow/globe.html">07. black yellow</option>
+      <option value="../08.darkblue-yellow/globe.html">08. darkblue yellow</option>
+      <option value="../09.grey/globe.html">09. grey</option>
+      <option value="../10.blue-white/globe.html">10. blue white</option>
+      <option value="../11.flat/globe.html">11. flat</option>
+      <option value="../12.stripes/globe.html" selected>12. stripes</option>
+      <option value="../13.red-white-flat/globe.html">13. red white flat</option>
+      <option value="../14.galaxy-shine/globe.html">14. galaxy shine</option>
+      <option value="../15.blue-transparent/globe.html">15. blue transparent</option>
+      <option value="../16.green-blue-stroke/globe.html">16. green blue stroke</option>
+      <option value="../17.blue-flat-stroke/globe.html">17. blue flat stroke</option>
+      <option value="../18.pale-flat-stroke/globe.html">18. pale flat stroke</option>
+      <option value="../19.yellow-blue-flat-long-shadow/globe.html">19. yellow blue flat long shadow</option>
+      <option value="../20.blue-white-flat-long-shadow/globe.html">20. blue white flat long shadow</option>
+      <option value="../21.blue-purple-gradient/globe.html">21. blue purple gradient</option>
+      <option value="../22.blue-bronze-gradient/globe.html">22. blue bronze gradient</option>
+      <option value="../23.electric-green/globe.html">23. electric green</option>
+      <option value="../24.darkblue-electric-green/globe.html">24. darkblue electric green</option>
+      <option value="../25.yellow-black-foggy/globe.html">25. yellow black foggy</option>
+      <option value="../26.white-bronze-gradient/globe.html">26. white bronze gradient</option>
+      <option value="../27.white-blue-additional-shadows/globe.html">27. white blue additional shadows</option>
+      <option value="../28.blue-additional-shadows/globe.html">28. blue additional shadows</option>
+      <option value="../29.flat-eco/globe.html">29. flat eco</option>
+      <option value="../30.gold/globe.html">30. gold</option>
+      <option value="../31.blue-inner-light/globe.html">31. blue inner light</option>
+      <option value="../32.red-stroke-flat-long-shadow/globe.html">32. red stroke flat long shadow</option>
+      <option value="../33.red-cherry-flat-long-shadow/globe.html">33. red cherry flat long shadow</option>
+      <option value="" disabled="disabled">------------------------------</option>
+      <option value="../slower_2x/globe.html">two times slower</option>
+      <option value="../six-continents/globe.html">with six-continents</option>
+      <option value="" disabled="disabled">------------------------------</option>
+    </select>
+  <div class="nav-fwd-bck">
+    <a href="../13.red-white-flat/globe.html" class="button">next</a>
+  </div>
+  </div>
+
+  <div style="padding-bottom: 0;">
+    <strong>Main elements:</strong>
+  </div>
+
+<div class="opacity">
+  <div>
+    Inner shadow<br />
+    <input type="range" class="range" id="in_inner-shadow" name="continents-animation_inner-shadow" min="0" max="100" value="100" onchange="updateInput(this.value, this.name)" >
+    <input type="text" class="text" name="is" id="continents-animation_inner-shadow_display" value="100" disabled="disabled" />
+  </div>
+  <div>
+    Front continents<br />
+    <input type="range" class="range" id="in_flatmap-front" name="continents-animation_flatmap-front" min="0" max="100" value="100" onchange="updateInput(this.value, this.name)" >
+    <input type="text" class="text" name="is" id="continents-animation_flatmap-front_display" value="100" disabled="disabled" />
+    </div>
+  <div>
+    Back continents<br />
+    <input type="range" class="range" id="in_flatmap-back" name="continents-animation_flatmap-back" min="0" max="100" value="100" onchange="updateInput(this.value, this.name)" >
+    <input type="text" class="text" name="is" id="continents-animation_flatmap-back_display" value="100" disabled="disabled" />
+  </div>
+  <div>
+    Reflections<br />
+    <input type="range" class="range" id="in_reflections" name="reflections" min="0" max="100" value="100" onchange="updateInput(this.value, this.name)" >
+    <input type="text" class="text" name="is" id="reflections_display" value="100" disabled="disabled" />
+  </div>
+  <div>
+    Reflections-2nd<br />
+    <input type="range" class="range" id="in_reflections-2nd" name="reflections-2nd" min="0" max="100" value="100" onchange="updateInput(this.value, this.name)" >
+    <input type="text" class="text" name="is" id="reflections-2nd_display" value="100" disabled="disabled" />
+  </div>
+  <div>
+    Sphere<br />
+    <input type="range" class="range" id="in_sphere" name="sphere" min="0" max="100" value="100" onchange="updateInput(this.value, this.name)" >
+    <input type="text" class="text" name="is" id="sphere_display" value="100" disabled="disabled" />
+  </div>
+  <div>
+    Outer shadow<br />
+    <input type="range" class="range" id="in_outer-shadow" name="outer-shadow" min="0" max="100" value="100" onchange="updateInput(this.value, this.name)" >
+    <input type="text" class="text" name="is" id="outer-shadow_display" value="100" disabled="disabled" />
+  </div>
+</div>
+
+  <div class="reflections">
+    <strong>Reflections:</strong> 
+    <a href="#" id="t1" onclick="reflections('reflections','t','1');" class="t on">1</a>
+    <a href="#" id="t2" onclick="reflections('reflections2','t','2');" class="t">2</a>
+    <a href="#" id="t3" onclick="reflections('reflections3','t','3');" class="t">3</a>
+    <a href="#" id="t4" onclick="reflections('reflections4','t','4');" class="t">4</a>
+    <a href="#" id="t5" onclick="reflections('reflections5','t','5');" class="t">5</a>
+    <a href="#" id="t6" onclick="reflections('reflections6','t','6');" class="t">6</a>
+  </div>
+  <div>
+    <strong>Animation:</strong>
+  	<button id="play" onclick="vc_toggle(this);">Stop</button>
+  </div>
+  <div>
+    <strong>Stage image:</strong>
+    <a href="#" id="sg1" onclick="stageImageOn('sg','1','Stage_bg');" class="sg on">on</a>
+    <a href="#" id="sg2" onclick="stageImageOff('sg','2','Stage_bg');" class="sg">off</a>
+  </div>
+  <div>
+    <strong>Stage background:</strong>
+    <a href="#" id="s1" onclick="stageOn('s','1','Stage_bg');" class="s">on</a>
+    <a href="#" id="s2" onclick="stageOff('s','2','Stage_bg');" class="s on">off</a>
+  </div>
+  <div id="stage-bg-color" style="display: none;">
+    <!-- value: default Stage background-color -->
+    <input class="color" id="color" value="93D9FA" onchange="document.querySelector('#Stage').style.backgroundColor = '#'+this.color">
+  </div>
+
+  <div class="info">    
+    Note: Colors and dimensions of globe elements can be easily changed by editing SVG files internally. The procedure is described in documentation.
+  </div>
+  
+  <div class="info examples">    
+    <a href="../slower_2x/globe.html">Example with slower animation</a>
+    <a href="../six-continents/globe.html">Example with Antarctica</a>
+  </div>
+  
+
+
+</div>	
+<script type="text/javascript" src="../assets/edge-animation-handler.js"></script>
+<script type="text/javascript" src="../assets/jscolor/jscolor.js"></script>
+<script>
+AdobeEdge.bootstrapCallback(function() {
+
+  function setParams() {
+
+    var flatmapBack = 30;
+    document.querySelector('#Stage_globe_continents-animation_flatmap-back').style.opacity = flatmapBack/100;
+    document.querySelector('#in_flatmap-back').value = flatmapBack;
+
+/*
+    var innerShadow = 0;
+    document.querySelector('#Stage_globe_continents-animation_inner-shadow').style.opacity = innerShadow/100;
+    document.querySelector('#in_inner-shadow').value = innerShadow;
+
+
+    var reflections = 0;
+    document.querySelector('#Stage_globe_reflections').style.opacity = reflections/100;
+    document.querySelector('#in_reflections').value = reflections;
+
+    var reflections2nd = 0;
+    document.querySelector('#Stage_globe_reflections-2nd').style.opacity = reflections2nd/100;
+    document.querySelector('#in_reflections-2nd').value = reflections2nd;
+
+    var sphere = 0;
+    document.querySelector('#Stage_globe_sphere').style.opacity = sphere/100;
+    document.querySelector('#in_sphere').value = sphere;
+
+    var longShadow = 0;
+    document.querySelector('#Stage_globe_long-shadow').style.opacity = longShadow/100;
+    document.querySelector('#in_long-shadow').value = longShadow;
+*/
+
+  }
+  window.setTimeout(setParams,0);
+
+});  
+</script>
+<!-- controls END -->
+<div id="big-nav">
+  <a href="../13.red-white-flat/globe.html" class="button" id="big-nav-btn" title="Next example">next &rarr;</a>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2176248-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
