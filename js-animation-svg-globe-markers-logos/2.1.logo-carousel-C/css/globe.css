@@ -1,0 +1,189 @@
+/**
+Globe Elements
+**/
+.globe__placeholder {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  overflow: visible;
+  position: relative;
+  float: left;
+  padding: 1.7em;
+  margin: 0;
+  margin-bottom: 16px;
+  height: 200px; /* Unscaled is 200px. If 'globe__container' is scaled, multiply this value by scale() property, e.g. 200px * 0.5 = 100px */
+  width:  200px; /* Unscaled is 200px. If 'globe__container' is scaled, multiply this value by scale() property, e.g. 200px * 0.5 = 100px */
+}
+
+.globe__container {
+  overflow: visible;
+  position: relative;  
+  display: block;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+/*
+  -webkit-transform: scale(0.5);
+     -moz-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+       -o-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+     -moz-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+       -o-transform-origin: 0 0;
+          transform-origin: 0 0;
+*/
+}
+
+.globe__container,
+.globe {
+  width: 200px;
+  height: 200px;  
+}
+.globe {
+  overflow: visible;
+  position: relative;  
+  display: block;
+  margin: 0;
+  padding: 0;
+  top: 0; left: 0;
+}
+
+.globe__worldmap,
+.globe__worldmap__front,
+.globe__worldmap__back,
+.globe__sphere,
+.globe__outer_shadow,
+.globe__reflections__bottom,
+.globe__inner_shadow,
+.globe__reflections__top,
+.globe__outer_shadow {
+  position: absolute; display: block; margin: 0; right: auto; bottom: auto;  
+}
+
+.globe__sphere,
+.globe__outer_shadow,
+.globe__reflections__bottom,
+.globe__inner_shadow,
+.globe__reflections__top {
+  left: 0; top: 0; width: 200px; height: 200px;
+  background-position: 0 0; background-repeat: no-repeat;
+}
+.globe__outer_shadow {
+  left: 0; top: 186px; width: 200px; height: 30px;
+  background-position: 0 0; background-repeat: no-repeat;
+}
+
+
+.globe__worldmap {
+  left: 0; top: 0; width: 200px; height: 200px; overflow: hidden;
+  -webkit-border-radius: 50%;
+   -khtml-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+-webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+/*
+  overflow: visible;
+*/
+}
+
+.globe__worldmap__front,
+.globe__worldmap__back {
+  left: 0; top: 0; width: 1000px; height: 200px; overflow: visible;
+  background-image: url(../globe_images/worldmap_2x.svg);
+  background-repeat: no-repeat;
+}
+
+/**
+Globe elements visibility options
+**/
+.globe__sphere { background-image: url(../globe_images/sphere.svg);}
+.globe__outer_shadow { background-image: url(../globe_images/outer_shadow.svg);}
+.globe__reflections__top { background-image: url(../globe_images/reflections.svg);}
+.globe__reflections__bottom { background-image: url(../globe_images/reflections.svg);}
+.globe__inner_shadow { background-image: url(../globe_images/inner_shadow.svg);}
+.globe__worldmap__front { background-position: 0px 0px;}
+.globe__worldmap__back { background-position: 0px -220px;}
+
+
+/**
+Logo carousel
+**/
+.globe__worldmap__logos div { 
+  position: absolute;
+  display: block;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  left: 0;
+}
+.globe__worldmap__logos span { 
+  position: absolute;
+  display: block;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+}
+span.globe__logo1 { 
+  background: #333 url(../globe_images/logos/envato_white.svg) no-repeat scroll center center;
+  width: 128px; margin-left: -64px; /* margin-left is calculated by dividing 'width'  value by 2 with added minus sign */
+  height: 50px; margin-top: -25px;  /* margin-top  is calculated by dividing 'height' value by 2 with added minus sign */
+}
+span.globe__logo2 { 
+  background: #333 url(../globe_images/logos/envato_white_all.svg) no-repeat scroll center center;
+  width: 128px; margin-left: -64px; /* margin-left is calculated by dividing 'width'  value by 2 with added minus sign */
+  height: 50px; margin-top: -25px;  /* margin-top  is calculated by dividing 'height' value by 2 with added minus sign */
+}
+span.globe__logo3 { 
+  background: rgba(255,255,255,0.85) url(../globe_images/logos/envato_black_all.svg) no-repeat scroll center center;
+  width: 120px; margin-left: -60px; /* margin-left is calculated by dividing 'width'  value by 2 with added minus sign */
+  height: 120px; margin-top: -60px; /* margin-top  is calculated by dividing 'height' value by 2 with added minus sign */
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+}
+span.globe__logo4 { 
+  background: rgba(255,204,0,0.85) url(../globe_images/logos/envato_black_all.svg) no-repeat scroll center center;
+  width: 120px; margin-left: -60px; /* margin-left is calculated by dividing 'width'  value by 2 with added minus sign */
+  height: 120px; margin-top: -60px; /* margin-top  is calculated by dividing 'height' value by 2 with added minus sign */
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+}
+/*
+span.globe__logo1 { 
+  background: rgba(255,255,255,0.65) url(../globe_images/logos/envato_black.svg) no-repeat scroll center center;
+  width: 120px; margin-left: -60px;
+  height: 120px; margin-top: -60px;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+}
+*/
+
+/**
+PNG fallback
+**/
+/*
+.no-svg .globe__sphere {
+  background-image: url(../globe_images/sphere.png); }
+.no-svg .globe__outer_shadow {
+  background-image: url(../globe_images/outer_shadow.png); }
+.no-svg .globe__reflections__bottom {
+  background-image: url(../globe_images/reflections.png); }
+.no-svg .globe__inner_shadow {
+  background-image: url(../globe_images/inner_shadow.png); }
+.no-svg .globe__reflections__top {
+  background-image: url(../globe_images/reflections.png); }
+.no-svg .globe__worldmap__front,
+.no-svg .globe__worldmap__back {
+  background-image: url(../globe_images/worldmap_2x.png); }
+*/

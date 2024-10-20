@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Animated SVG Globe with markers and logos</title>
+  <link href="css/globe.css" rel="stylesheet" />
+	<script> var intro_id = 8; </script>
+</head>
+<body>
+<div class="container">
+
+
+<!-- <div style="margin-top: 100em;"></div> -->
+	
+  <!-- globe -->
+  <div class="globe__placeholder" style="width:100%; background-image: radial-gradient(at 50% 50%, #376A9A 0%, #191F25 100%); background-color: #233240;">
+	  <div class="globe__container" style="left: 50%; margin-left: -130px;">
+	    <div class="globe" style="visibility: hidden;">
+	      <div class="globe__sphere"></div>
+	      <div class="globe__outer_shadow"></div>
+	      <div class="globe__reflections__bottom"></div>
+
+	      <div class="globe__worldmap">
+	        <div class="globe__worldmap__back"></div>
+	        <div class="globe__worldmap__front"></div>
+	      </div>
+
+	      <div class="globe__inner_shadow"></div>
+	      <div class="globe__reflections__top"></div>
+	    </div>
+	  </div>
+  </div>
+  <!-- globe END -->
+	
+
+<!--
+  <p class="btn">
+		<button type="button" id="toggle_animation">Toggle</button>
+	</p>
+-->
+
+
+</div>	
+
+<script src="../../../assets/js/jquery-1.11.1.min.js"></script>
+<script src="../../../assets/js/velocity.min.js"></script>
+<script src="../js/globe_animation.js"></script>
+</body>
+</html>

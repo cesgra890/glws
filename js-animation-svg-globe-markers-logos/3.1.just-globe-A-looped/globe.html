@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>3.1 / Animated SVG Globe with markers and logos</title>
+  <link href="css/globe.css" rel="stylesheet" />
+	<link href="../assets/edge-animation-handler.css" rel="stylesheet" />
+	<script> var id = 6; </script>
+	<script type="text/javascript" src="../assets/edge-navigation.js"></script>
+</head>
+<body>
+<div class="container">
+
+	<h2>3.1 Just the globe <span>(looped animation)</span></h2>
+  <h3>Around the world, around the world!</h3>
+  <!-- <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p> -->
+
+<!-- <div style="margin-top: 100em;"></div> -->
+	
+  <!-- globe -->
+  <div class="globe__placeholder">
+	  <div class="globe__container">
+	    <div class="globe" style="visibility: hidden;">
+	      <div class="globe__sphere"></div>
+	      <div class="globe__outer_shadow"></div>
+        <!-- <div class="globe__reflections__bottom"></div> -->
+
+	      <div class="globe__worldmap">
+	        <div class="globe__worldmap__back"></div>
+	        <div class="globe__worldmap__front"></div>
+	      </div>
+
+	      <div class="globe__inner_shadow"></div>
+	      <div class="globe__reflections__top"></div>
+	    </div>
+	  </div>
+  </div>
+  <!-- globe END -->
+	
+  <p style="padding-top: .5em;">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. </p>
+  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean ultricies mi vitae est.</p>
+
+  <!-- toggle globe animation -->
+  <p class="btn">
+		<button type="button" id="toggle_animation">Toggle</button>
+	</p>
+  <!-- toggle globe animation END -->
+
+</div>	
+
+<script src="../assets/js/jquery-1.11.1.min.js"></script>
+<script src="../assets/js/velocity.min.js"></script>
+<script src="js/globe_animation.js"></script>
+<!-- controls -->
+<div class="controls">
+
+  <script> build_navigation(); </script>
+
+    <div class="title">
+      <p><strong>Animated SVG Globe with markers and logos</strong></p>
+      <p class="sub">JavaScript animation.<script>document.write("  "+id+"/8");</script></p>
+    </div>
+    <div class="buy"><a href="http://codecanyon.net/item/animated-svg-globe-with-markers-and-logos/9844557?ref=cesgra" class="button" target="_blank">Buy this item</a></div>
+  <div class="info">
+    You can easily: 
+    <ul>
+      <li><a href="../worldmap_color_presets/index.html">change colors</a>, visibility, opacity of globe elements</li>
+      <li>change duration, order, easing of animation</li>
+      <li>resize the globe</li>
+    </ul>
+  </div>
+
+</div>
+
+<script> build_next_nav(); </script>
+
+<!-- <script type="text/javascript" src="../assets/edge-animation-handler.js"></script> -->
+<!-- <script type="text/javascript" src="../assets/jscolor/jscolor.js"></script> -->
+<!-- controls END -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2176248-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

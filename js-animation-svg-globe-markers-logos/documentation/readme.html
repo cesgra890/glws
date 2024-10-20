@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Animated SVG Globe with markers and logos / JavaScript animation</title>
+  <link rel="stylesheet" href="readme-files/css/style.css" />
+</head>
+<body>
+
+<div class="header-c">
+<div class="header">
+  <img src="readme-files/img/144px.png" alt="" class="left" />
+  <h1>Animated SVG Globe with markers and logos</h1>
+  <h3>JavaScript animation</h3>
+</div>
+</div>
+
+<div class="main">
+<!-- section -->
+<div class="toc">
+  <p><a href="#description">Description</a></p>
+  <p><a href="#files">Files in the bundle</a></p>
+  <p><a href="#embedding">Embedding the Globe</a></p>
+  <p><a href="#main">Globe&rsquo;s main graphic elements</a></p>
+  <p><a href="#colors">How to change colors of Globe&rsquo;s elements</a></p>
+	<p><a href="#visibility-opacity">How to set visibility / opacity of Globe&rsquo;s elements</h2>
+  <p><a href="#resize-symbol-instances">How to resize the Globe</a></p>
+  <p><a href="#markers">Example with markers - how to add/edit the marker</a></p>
+  <p><a href="#logo-carousel">Example with logo carousel - how to add/change logo image</a></p>
+  <p><a href="#variables-explained">Javascript variables explained</a></p>
+  <p><a href="#show-on-scroll">Animation shows up when the window is scrolled to Globe&rsquo;s position</a></p>
+  <p><a href="#mime">SVG files require proper web server MIME-type configuration</a></p>
+  <p><a href="#notes">Notes</a></p>
+</div>
+
+
+
+
+<!-- section -->
+<div class="description">
+<h2 id="description">Description</h2>
+<p>Spinning Earth Globe animations with markers and logos' carousel for Desktop and Mobile. Perfect way to visualize location of event/office/store/city or to showcase partners'/sponsors' logos.</p>
+<ul>
+	<li>Globe rotation made up with flat world maps animated in circle mask</li>
+  <li>Smooth animation (done with Velocity.js)</li>
+	<li>Animation speed and sequence controlled with Javascript (defined variables)</li>
+	<li>Animation shows up when the Globe becomes visible in the browser</li>
+  <li>Resolution independent SVG graphics (perfect for displays with higher pixel density, such as Retina)</li>
+  <li>Easy to change width, colors or visibility of elements, animation parameters</li>
+  <li>In total: 7 different animation examples + 33 color presets</li>
+
+  <li>Versions:
+    <ol>
+      <li>globe with map markers (3 examples)</li>
+      <li>globe with logo carousel (2 examples)</li>
+      <li>just the globe (2 examples)</li>
+    </ol>
+  </li>
+
+  <li>Included:
+    <ul>
+      <li>HTML, CSS, JS, SVG files</li>
+      <li>Documentation</li>
+      <li>PSD helper</li>
+    </ul>
+  </li>
+  <li>Browsers:
+    <ul>
+      <li>For Desktop: IE9, IE10, IE11, Chrome, Firefox, Safari, Opera</li>
+      <li>For Mobile: iOS Safari, iOS Chrome, Android Chrome</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+
+<!-- section -->
+<h2 id="files">Files in the bundle</h2>
+
+<table style="width: 80%;">
+    <tr>
+      <th scope="col">Folder</th>
+      <th scope="col">Description</th>
+      <!-- <th scope="col">Type</th> -->
+    </tr>
+    <tr>
+      <td><code>1.1.marker</code></td>
+      <td>Example with marker</td>
+      <!-- <td>B</td> -->
+    </tr>
+    <tr>
+      <td><code>1.2.marker-looped</code></td>
+      <td>Example with marker (looped animation)</td>
+      <!-- <td>A</td> -->
+    </tr>
+    <tr>
+      <td><code>1.3.marker-multiple-globes</code></td>
+      <td>Example with marker (multiple globes)</td>
+      <!-- <td>D</td> -->
+    </tr>
+    <tr>
+      <td><code>2.1.logo-carousel</code></td>
+      <td>Example with logo carousel (looped animation)</td>
+      <!-- <td>C</td> -->
+    </tr>
+    <tr>
+      <td><code>2.2.logo</code></td>
+      <td>Example with single logo (looped animation)</td>
+      <!-- <td>C</td> -->
+    </tr>
+    <tr>
+      <td><code>3.1.just-globe-looped</code></td>
+      <td>Just the globe (looped animation)</td>
+      <!-- <td>A</td> -->
+    </tr>
+    <tr>
+      <td><code>3.2.just-globe</code></td>
+      <td>Just the globe</td>
+      <!-- <td>B</td> -->
+    </tr>
+    <tr>
+      <td><code>worldmap_color_presets</code></td>
+      <td>33 color presets</td>
+      <!-- <td></td> -->
+    </tr>
+    <tr>
+      <td><code>psd</code></td>
+      <td>PSD helper file</td>
+      <!-- <td></td> -->
+    </tr>
+    <tr>
+      <td><code>documentation</code></td>
+      <td>this file</td>
+      <!-- <td></td> -->
+    </tr>
+</table>
+
+
+
+
+
+<!-- section -->
+<h2 id="embedding">Embedding the Globe</h2>
+<p>These code lines are needed for embedding the Globe into HTML file:</p>
+<p>1. <strong>HTML code</strong> of the Globe instance between these commented lines in <strong>&lt;body&gt;</strong> section:</p>
+<ul>
+  <li><code>&lt;!-- globe --&gt;</code> ... <code>&lt;!-- globe END --&gt;</code></li>
+</ul>
+
+<p>2. Link to <strong>CSS file</strong> in <strong>&lt;head&gt;</strong> section</p>
+<ul>
+  <li><code>css/globe.css</code></li>
+</ul>
+
+<p>3. Links to <strong>Javascript files</strong> just before <strong>&lt;/body&gt;</strong> tag:</p>
+<ul>
+  <li><code>js/jquery-1.11.1.min.js</code></li>
+  <li><code>js/velocity.min.js</code></li>
+  <li><code>js/globe_animation.js</code></li>
+</ul>
+
+<p>Note: jQuery is needed for referencing DOM elements and detecting onScroll events.</p>
+
+<p>Basic example of embedded Globe:</p>
+<img src="readme-files/img/embedding.png" alt="" />
+
+<p>Note: it may slightly vary for different examples of the Globe</p>
+
+
+
+<!-- section -->
+<h2 id="main">Globe&rsquo;s main graphic elements</h2>
+<p>All graphics are SVG vector files, located in <code>globe_images</code> folder.</p>
+
+
+
+<table style="width: 80%;">
+    <tr>
+      <th scope="col">CSS class</th>
+      <th scope="col">SVG filename</th>
+      <th scope="col"></th>
+    </tr>
+    <tr>
+      <td>globe__sphere</td>
+      <td>sphere.svg</td>
+      <td>bottommost element</td>
+    </tr>
+    <tr>
+      <td>globe__outer_shadow</td>
+      <td>outer_shadow.svg</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>globe__reflections__bottom</td>
+      <td>reflections.svg *</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>globe__worldmap__back</td>
+      <td>worldmap_2x.svg **</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>globe__worldmap__front</td>
+      <td>worldmap_2x.svg **</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>globe__inner_shadow</td>
+      <td>inner_shadow.svg</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>globe__reflections__top</td>
+      <td>reflections.svg *</td>
+      <td>topmost element</td>
+    </tr>
+</table>
+
+<p>* Used in two elements / ** Used in two elements, File name might be different in different examples</p>
+
+
+
+
+<h3>Fine-tuning individual elements</h3>
+<p>You might face situations when you just want to alter <strong>individual</strong> elements&rsquo; dimensions, so fine-tuning of SVG elements&rsquo;  is needed.</p>
+
+<p style="padding-top: 1.3em;"><code style="font-size: 150%;">&lt;circle&gt;</code> Used in <code>inner_shadow.svg</code> and <code>sphere.svg</code></p>
+<img src="readme-files/img/circle-svg.png" alt="" />
+<ul>
+  <li><code>r</code>: circle radius (and width at the same time). For example: <code>99.5</code></li>
+  <li><code>cx</code>, <code>cy</code>: X, Y position of circle&rsquo;s center. For example: <code>50%</code></li>
+</ul>
+
+<p style="padding-top: 1.3em;"><code style="font-size: 150%;">&lt;ellipse&gt;</code> Used in <code>outer_shadow.svg</code></p>
+<img src="readme-files/img/ellipse-svg.png" alt="" />
+<p>The ellipse is centered in <code>cx</code>, <code>cy</code> like the circle. But the radius in the x and y directions are specified by two attributes, not one: The <code>rx</code> and <code>ry</code> attributes. As you can see, the rx attribute has a higher value than the ry attribute, making the ellipse wider than it is tall. Setting the rx and ry attributes the same number would result in a regular circle.</p>
+
+<p style="padding-top: 1.3em;"><code style="font-size: 150%;">&lt;path&gt;</code> Used in <code>reflections.svg</code></p>
+<img src="readme-files/img/path-svg.png" alt="" />
+<p>The <code>translate()</code> function moves a shape. You pass the x and y value to the translate() function inside the parameters.</p>
+<p>The <code>scale()</code> function scales a shape up or down in size. The scale() function scales both the shapes dimensions and its position coordinates. Use scale() with combination with translate().</p>
+
+
+
+<!-- section -->
+<h2 id="colors">How to change colors of Globe&rsquo;s elements</h2>
+
+<p>Colors can be easily modified by editing respective SVG file in your favorite code editor. You can safely edit any SVG file from folder <code>globe_images</code>.</p>
+
+<!-- .svg -->
+<h3>worldmap_2x.svg</h3>
+<img src="readme-files/img/svg_worldmap_2x.png" alt="" style="width: 960px;" />
+<h3>worldmap_4x.svg</h3>
+<img src="readme-files/img/svg_worldmap_4x.png" alt="" style="width: 960px;" />
+
+<p>Note: Globes with looped continents' animation are using SVG files with "2x" in the name. "4x" files are two times wider with continents repeated 4 times - that is needed to extend the length of rotation (the distance worldmaps are translated to).</p>
+
+<p>Continents might be filled with solid color or linear gradient.</p>
+<p>Front continents colors/gradients are defined with CSS class name <code>fr</code> inside <code>&lt;style&gt;</code> node.</p>
+<p>Back continents colors/gradients are defined with CSS class name <code>bck</code> inside <code>&lt;style&gt;</code> node.</p>
+
+<div class="img-list">
+  <p><strong>Solid color example</strong></p>
+  <img src="readme-files/img/color-solid-svg.png" alt="" />
+</div>
+
+<dl>
+  <dt><code>fill</code></dt>
+  <dd>Fill color can be a hexadecimal RGB value, a regular RGB value, or one of the pre-defined color keywords.</dd>
+</dl>
+
+
+
+<div class="img-list">
+  <p><strong>Linear gradient example</strong></p>
+  <img src="readme-files/img/linear-gradients-svg-photoshop.png" alt="" />
+</div>
+
+<p>The <code>&lt;linearGradient&gt;</code>-element has two nested <code>&lt;stop&gt;</code>-elements. The <code>&lt;linearGradient&gt;</code>-element controls the direction of the gradient and what happens before and after the gradient is applied (the spreadMethod attribute). The <code>&lt;stop&gt;</code>-elements control the colors used in the gradient, how far into the shape the colors start and stop, plus the opacity of the gradient. </p>
+
+<p>Here is a list of the <code>&lt;stop&gt;</code> element attributes:</p>
+<dl>
+  <dt><code>offset</code></dt>
+  <dd>How far into the shape this color starts (if the first color of the gradient) or stops (if the last color of the gradient). Specified as percentages of the shape the gradient is applied to.</dd>
+  <dt><code>stop-color</code></dt>
+  <dd>The color of this stop-point. The color the gradient changes from / to.</dd>
+  <dt><code>stop-opacity</code></dt>
+  <dd>The opacity of the color of this stop-point. If opacity changes from one stop-point with 1 to another with opacity 0, then the color will gradually become more transparent.</dd>
+</dl>
+
+<p><code>&lt;stop&gt;</code> element attributes' equivalents in Photoshop:</p>
+<blockquote>
+<p>
+  offset > Location<br />
+  stop-color > Color<br />
+  stop-opacity > Opacity
+</p>
+</blockquote>
+
+<p>Note: in Photoshop opacity values are expressed as percentage, so you'll have to convert them when placing into SVG (divide by 100). For example, 50% in Photoshop will be 0.5 in SVG.</p>
+
+<p>More on SVG Gradients: <a href="http://tutorials.jenkov.com/svg/svg-gradients.html">http://tutorials.jenkov.com/svg/svg-gradients.html</a></p>
+
+
+
+<!-- .svg -->
+<div>
+  <div style="width: 220px; display: inline-block;">
+    <h3>sphere.svg</h3>
+    <img src="readme-files/img/svg_sphere.png" alt="" />
+  </div>
+  <div style="display: inline-block;">
+    <h3>inner_shadow.svg</h3>
+    <img src="readme-files/img/svg_inner_shadow.png" alt="" />
+  </div>
+</div>
+
+<p>Both are oval shapes. Could be filled with solid color, linear gradient or radial gradient.</p>
+<p><strong>Radial gradient example</strong></p>
+<img src="readme-files/img/radial-gradients-svg.png" alt="" />
+
+<p>The <code>&lt;radialGradient&gt;</code>-element has nested <code>&lt;stop&gt;</code>-elements. The <code>&lt;radialGradient&gt;</code>-element controls the direction of the gradient. The <code>&lt;stop&gt;</code>-elements control the colors used in the gradient, how far into the shape the colors start and stop, plus the opacity of the gradient.</p>
+
+<p>The <code>&lt;stop&gt;</code> element attributes are the same as for <code>&lt;linearGradient&gt;</code>.</p>
+  
+<p>More on SVG Gradients: <a href="http://tutorials.jenkov.com/svg/svg-gradients.html">http://tutorials.jenkov.com/svg/svg-gradients.html</a></p>
+
+
+<!-- .svg -->
+<h3>reflections.svg</h3>
+<!-- <p><strong>reflections.svg</strong> <code>.globe__reflections__top, .globe__reflections__bottom</code></p> -->
+<img src="readme-files/img/svg_reflections.png" alt="" />
+<p>There are 5 predefined reflections&rsquo; gradients in this file.</p>
+<img src="readme-files/img/reflections.jpg" alt="" />
+<p>By default the shape of reflections element uses gradient with ID named <code>gr1</code>. The other are <code>gr2</code>, <code>gr3</code>, <code>gr4</code> and <code>gr5</code>.</p>
+<img src="readme-files/img/reflections-svg.png" alt="" />
+<p>If you want to select another one:</p>
+<ol>
+  <li>Open <code>reflections.svg</code> in code editor</li>
+  <li>Find the line with code <code>&lt;path fill=<strong>"url(#gr1)"</strong>...&gt;</code></li>
+  <li>Change <code>gr1</code> to <code>gr2</code>, <code>gr3</code>, <code>gr4</code> or <code>gr5</code>.</li>
+  <li>Save the file.</li>
+</ol>
+<p>Additionally you may alter gradient stops&rsquo; opacity, colors or create your own gradient.</p>
+
+
+<!-- .svg -->
+<h3>outer_shadow.svg</h3>
+<img src="readme-files/img/svg_outer_shadow.png" alt="" />
+<p>Globe&rsquo;s casted shadow.</p>
+
+	
+<!-- .svg -->
+<h3>globe.psd</h3>
+
+<p>For convenience purposes I've included PSD file with globe elements (on separate layers) you can play with. There you can tweak colors and gradients and see the results instantly. Then just transfer the color codes into respective SVG files.</p>
+
+<ol>
+  <li>Open <code>globe.psd</code></li>
+  <li>Select element's layer (named <code>inner.shadow</code>, <code>continents.front</code>, <code>continents.back</code> or <code>sphere</code>) </li>
+  <li>From Photoshop menu choose Layer > Layer Style > Blending Options > Gradient Overlay</li>
+  <li>Click on "Gradient"</li>
+  <li>Click on "Stops" (red boxed in picture below)</li>
+  <li>Modify values, drag them to reposition</li>
+</ol>
+
+<img src="readme-files/img/linear-gradients-svg-photoshop.png" alt="" />
+
+
+
+<!-- section -->
+<h2 id="visibility-opacity">How to set visibility / opacity of Globe&rsquo;s elements</h2>
+
+<p><strong>Visibility</strong> - do it in HTML</p>
+<p>Open <code>globe.html</code> and find code line with <code>&lt;div&gt;</code> element you don't want to be visible. You may safely remove any of these lines:</p>
+<ul>
+	<li>&lt;div class=&quot;globe__sphere&quot;&gt;&lt;/div&gt;</li>
+	<li>&lt;div class=&quot;globe__outer_shadow&quot;&gt;&lt;/div&gt;</li>
+	<li>&lt;div class=&quot;globe__reflections__bottom&quot;&gt;&lt;/div&gt;</li>
+	<li>&lt;div class=&quot;globe__worldmap__back&quot;&gt;&lt;/div&gt;</li>
+	<li>&lt;div class=&quot;globe__worldmap__front&quot;&gt;&lt;/div&gt;</li>
+	<li>&lt;div class=&quot;globe__inner_shadow&quot;&gt;&lt;/div&gt;</li>
+	<li>&lt;div class=&quot;globe__reflections__top&quot;&gt;&lt;/div&gt;</li>
+</ul>
+
+<p style="padding-bottom: 1em;">Or wrap in <code>&lt;!-- --&gt;</code> to temporarily hide it. For example: <code>&lt;!-- &lt;div class=&quot;globe__sphere&quot;&gt;&lt;/div&gt; --&gt;</code></p>
+
+<p><strong>Opacity</strong> - do it in SVG</p>
+<p>I've noticed that it's better to set opacity right in the SVG files rather than in CSS in order to avoid possible conflicts.</p>
+<ul>
+	<li>Open corresponding SVG file, find the <code>opacity</code> parameter</li>
+  <li>Change <code>opacity</code> to the new one, for example <code>opacity="0.5"</code> or <code>opacity: 0.5;</code> if it's inline CSS.</li>
+</ul>
+<p>Possible values are from <code>0</code> to <code>1</code>.</p>
+
+
+
+
+<!-- section -->
+<h2 id="resize-symbol-instances">How to resize the Globe</h2>
+
+<ol>
+  <li>Open <code>globe.css</code> file with your favorite code editor</li>
+  <li>Find <code>.globe__container</code> and uncomment <strong>transform</strong> and <strong>transform-origin</strong> properties between <code>/*</code> and <code>*/</code>
+    
+<ul>
+          <li><code>transform: scale(0.5);</code></li>
+          <li><code>transform-origin: 0 0;</code></li>
+</ul>
+
+    </li>
+  <li>Parent element <code>.globe__placeholder</code> also must be resized to match dimensions of both elements. The new <strong>height</strong> and <strong>width</strong> is calculated by multiplying transform's scale() property, e.g. 200px * 0.5 = 100px
+    
+<ul>
+          <li><code>width: 100px;</code></li>
+          <li><code>height: 100px;</code></li>
+</ul>    
+    </li>
+  <li>Save the file.</li>
+</ol>
+
+
+
+<!-- section -->
+<h2 id="markers">Example with markers - how to add/edit the marker</h2>
+
+<img src="readme-files/img/svg_worldmap_4x_sydney.png" alt="" />
+
+<p>Open <code>worldmap_4x_sydney.svg</code> file with your favorite code editor. Additionally you may open same file with your browser and refresh there to see changes you've made in SVG instantly.</p>
+<img src="readme-files/img/code_svg_marker_basic.png" alt="" />
+<ol>
+  <li><strong>Position of entire marker</strong> element (<code>g id="marker"</code>) with translate():<br /><br />
+	 1st value: on X axis / 2nd value: on Y axis<br />
+	<code>0,0</code> - the dot will be at the very top/left position<br />
+	<code>473,200</code> - the dot will be placed at the very bottom/right position</li>
+
+	<li><strong>Change city name</strong> (inside <code>text</code> node)</li>
+	<li><strong>Adjust caption width</strong> (<code>rect</code> inside <code>g id="marker"</code> element, width attribute)</li>
+	<li><strong>Adjust caption's position</strong> (<code>g</code> child element of <code>g id="marker"</code> element, translate() 1st value: X axis)</li>
+  <li>Save the file.</li>
+</ol>
+
+<h3>Additionally you may edit parameters of these elements:</h3>
+<img src="readme-files/img/code_svg_marker_more.png" alt="" />
+
+<p>Change dot (<code>circle</code> node inside <code>g id="marker"</code> element):</p>
+
+<ul>
+	<li>color: <code>fill</code> attribute</li>
+	<li>size (circle radius): <code>r</code> attribute</li>
+	<li>stroke width: <code>stroke-width</code> attribute</li>
+	<li>stroke color: <code>stroke</code> attribute</li>
+</ul>
+
+<p>Caption (<code>rect</code> node inside <code>g id="marker"</code> element):</p>
+<ul>
+	<li>borders: <code>rx</code> attribute</li>
+	<li>height: <code>height</code> attribute</li>
+	<li>color: <code>fill</code> attribute</li>
+</ul>
+
+
+<p>Text (<code>text</code> node inside <code>g id="marker"</code> element):</p>
+<ul>
+	<li>font-family: CSS</code> attribute</li>
+	<li>font-size: CSS</code> attribute</li>
+	<li>color: <code>fill</code> attribute</li>
+</ul>
+
+
+
+<!-- section -->
+<h2 id="logo-carousel">Example with logo carousel - how to add/change logo image</h2>
+
+<p>Additional HTML code lines are added in example with logo carousel. In example below 4 images are rotated. Notice 4 <code>&lt;div&gt;</code> elements inside parent <code>&lt;div&gt;</code> with class name <code>globe__worldmap__logos</code>.</p>
+
+<img src="readme-files/img/code_logos.png" alt="" />
+
+<p>To add the 5th logo, edit <code>globe.html</code> HTML file with your favorite code editor:</p>
+
+<ol>
+  <li>Find the line with <code>.globe__logo4</code> element</li>
+	<li>Duplicate it and change class name to <code>.globe__logo5</code></li>
+  <li>Save the file.</li>
+</ol>
+
+<p>Then edit <code>globe.css</code> CSS file with your favorite code editor:</p>
+
+<ol>
+  <li>Find the line with <code>.globe__logo4</code></li>
+	<li>Duplicate it and change class name to <code>.globe__logo5</code></li>
+	<li>Change CSS properties to match the style: <code>background-color</code>, <code>background-image</code> (url)</li>
+	<li>Set <code>width</code> and <code>height</code> of new image</li>
+	<li>Set <code>margin-left</code> and <code>margin-top</code> for new image: <br />
+
+<ul>
+	<li>'margin-left' is calculated by dividing 'width' value by 2 with added minus sign</li>
+	<li>'margin-top' is calculated by dividing 'height' value by 2 with added minus sign</li>
+</ul>		
+	</li>
+  <li>Save the file.</li>
+</ol>
+
+<p>Note: in the examples SVG files with logos are used, but also any bitmap format will work: PNG, JPG or GIF.</p>
+
+
+
+
+
+
+
+
+
+
+<!-- section -->
+<h2 id="variables-explained">Javascript variables explained</h2>
+<p>All the variables you can safely modify in <code>globe_animation.js</code> and play with are listed between two commented lines with text “VARIABLES SETUP”. Below comes every variable explained. Note: additionally all these variables are commented in the JS file.</p>
+
+
+<div class="bq vars">
+
+  <h3>globe_intro_delay <code>Number</code></h3>
+  <p>Time to wait before intro animation after Globe is visible (ms). Delayed function is <code>globe_intro()</code>. For example: <code>500</code></p>
+
+  <h3>globe_intro_duration <code>Number</code></h3>
+  <p>Globe intro animation duration (ms). For example: <code>1000</code></p>
+
+  <h3>globe_intro_easing <code>String / Array</code></h3>
+  <p>Globe intro animation easing. For example: <code>"swing"</code></p>
+  <ul>
+    <li>Supported <a href="http://easings.net/" target="_blank">jQuery UI easings</a>: <code>"swing"</code>, <code>"linear"</code>, <code>"easeInSine"</code>, <code>"easeOutSine"</code>, <code>"easeInOutSine"</code>, <code>"easeInQuad"</code>, <code>"easeOutQuad"</code>, <code>"easeInOutQuad"</code>, <code>"easeInCubic"</code>, <code>"easeOutCubic"</code>, <code>"easeInOutCubic"</code>, <code>"easeInQuart"</code>, <code>"easeOutQuart"</code>, <code>"easeInOutQuart"</code>, <code>"easeInQuint"</code>, <code>"easeOutQuint"</code>, <code>"easeInOutQuint"</code>, <code>"easeInExpo"</code>, <code>"easeOutExpo"</code>, <code>"easeInOutExpo"</code>, <code>"easeInCirc"</code>, <code>"easeOutCirc"</code>, <code>"easeInOutCirc"</code></li>
+    <li>Supported CSS3's named easings: <code>"ease"</code>, <code>"ease-in"</code>, <code>"ease-out"</code>, <code>"ease-in-out"</code></li>
+    <li>Spring physics use example:<code>[ 250, 15 ]</code></li>
+  </ul>
+  <p>More about Velocity.js easing functions: <a href="http://julian.com/research/velocity/#easing" target="_blank">http://julian.com/research/velocity/#easing</a></p>
+
+
+  <h3>continents_delay <code>Number</code></h3>
+  <p>Time to wait before Globe continents' animation (ms). For example: <code>100</code></p>
+
+  <h3>continents_duration <code>Number</code></h3>
+  <p>Globe continents' animation duration (ms). For example: <code>2000</code></p>
+
+  <h3>continents_easing <code>String / Array</code></h3>
+  <p>Globe continents' animation easing. For example: <code>"ease"</code></p>
+  <ul>
+    <li>Supported <a href="http://easings.net/" target="_blank">jQuery UI easings</a>: <code>"swing"</code>, <code>"linear"</code>, <code>"easeInSine"</code>, <code>"easeOutSine"</code>, <code>"easeInOutSine"</code>, <code>"easeInQuad"</code>, <code>"easeOutQuad"</code>, <code>"easeInOutQuad"</code>, <code>"easeInCubic"</code>, <code>"easeOutCubic"</code>, <code>"easeInOutCubic"</code>, <code>"easeInQuart"</code>, <code>"easeOutQuart"</code>, <code>"easeInOutQuart"</code>, <code>"easeInQuint"</code>, <code>"easeOutQuint"</code>, <code>"easeInOutQuint"</code>, <code>"easeInExpo"</code>, <code>"easeOutExpo"</code>, <code>"easeInOutExpo"</code>, <code>"easeInCirc"</code>, <code>"easeOutCirc"</code>, <code>"easeInOutCirc"</code></li>
+    <li>Supported CSS3's named easings: <code>"ease"</code>, <code>"ease-in"</code>, <code>"ease-out"</code>, <code>"ease-in-out"</code></li>
+    <li>Spring physics use example:<code>[ 250, 15 ]</code></li>
+  </ul>
+  <p>More about Velocity.js easing functions: <a href="http://julian.com/research/velocity/#easing" target="_blank">http://julian.com/research/velocity/#easing</a></p>
+
+
+  <h3>continents_loop_interval <code>Number</code></h3>
+  <p>Globe rotation loop interval. For example: <code>16000</code></p>
+
+  <h3>logo_loop_interval <code>Number</code></h3>
+  <p>Logo rotation loop interval (ms). For example: <code>3000</code></p>
+
+  <h3>logo_in_params, logo_out_params <code>Arrays</code></h3>
+  <p>1st Number - delay in multiseconds (ms). For example: <code>0</code></p>
+  <p>2nd Number - duration in multiseconds (ms). For example: <code>1000</code></p>
+  <p>3rd String - easing. For example: <code>"swing"</code></p>
+
+  <h3>rotation_length <code>Number</code></h3>
+  <p>Globe rotation length (positive/negative values). If set to '0', there will be no rotation. If value is negative, rotation will be to opposite side. Don&rsquo;t set this value too big, otherwise continents might not be visible. For example: <code>120</code></p>
+
+  <h3>svg_marker_cx <code>Number</code></h3>
+  <p>Marker position on X axis. Same as translate X value from SVG file <code>worldmap-x4.svg</code>. Line (for example) <code>&lt;g id=&quot;marker&quot; transform=&quot;translate(120,0)&quot; &gt;</code> Values from <code>0</code> to <code>473</code>. For example: <code>120</code></p>
+
+  <h3>globe_intro_delay_multiplier <code>Number</code></h3>
+	<p>Globe intro delay multiplier. Used in example with multiple globes. For example: <code>0.15</code></p>
+	<p>If set to <code>0</code>: all globes are animated altogether (at the same time)</p>
+	<p>If set to <code>1</code>: each globe is animated only after the last one is completed</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- section -->
+<h2 id="show-on-scroll">Animation shows up when the window is scrolled to Globe&rsquo;s position</h2>
+
+<p>Right from the box animation is playing only when the Globe is visible. Function <code>isScrolled</code> is responsible for doing that (additionally uses <code>isScrolledIntoView</code>)</p>
+<ul>
+	<li>First check of scroll position is just after page loaded: <code>$(window).load(isScrolled);</code></li>
+	<li>And then after each scroll on a page: <code>$(window).scroll(isScrolled);</code></li>
+</ul>
+
+<p>When Globe is visible in browser, intro animation is played and <code>scroll</code> event is unbind: <code>$(window).unbind('scroll');</code> to stop future detection of scroll position.</p>
+
+
+
+
+
+<!-- section -->
+<h2 id="mime">SVG files require proper web server MIME-type configuration</h2>
+<p>If SVG files don't show up on web, the server doesn't serve MIME types for SVG files correctly. You should configure server appropriately. There are several ways to do it, depending upon the server type, and your access to server settings.</p>
+
+<p>For example, in <strong>Apache server</strong> it's done by editing <code>.htaccess</code> configuration file that is hidden - make sure your FTP client shows hidden files. If your server does not have such a file, create a file and name it “.htaccess”, and associate the SVG file extensions with the correct MIME Type; if the file already exists, you can simply add the correct entries to it. The particular line you should add are:</p>
+
+<blockquote>
+  <code>AddType image/svg+xml svg</code><br />
+</blockquote>
+<p>The .htaccess file should be placed in the directory that contains the SVG file, or any parent directory. </p>
+
+<p>More on this subject: <a href="http://www.w3.org/services/svg-server/">http://www.w3.org/services/svg-server/</a></p>
+
+
+
+
+<!-- section -->
+<h2 id="notes">Notes</h2>
+<p>Animations are done with the help of <a href="http://julian.com/research/velocity/" target="_blank">Velocity.js</a> animation library by Julian Shapiro (<a href="http://en.wikipedia.org/wiki/MIT_License" target="_blank">MIT license</a>)</p>
+<p>The original map is taken from the NASA website as a source.</p>
+
+
+
+
+<div class="footer">
+  <h2>Thank you!</h2>
+  <p>Thank you for purchasing my files. If you have any questions that are beyond the scope of this documentation, please feel free to email via my user page <a href="http://codecanyon.net/user/cesgra">contact form</a>. Thanks so much!</p>
+  <p class="credits">Created: December 18, 2014 by cesgra. Email: <a href="mailto:cz.cesgra@yahoo.co.uk">cz.cesgra@yahoo.co.uk</a></p>
+</div>
+
+</div>
+
+<!-- Additional Links code -->
+<script>
+
+	var newlink = document.createElement("link");
+	newlink.setAttribute("rel", "stylesheet");
+	newlink.setAttribute("type", "text/css");
+	newlink.setAttribute("href", "http://dsgnblvd.com/envato/additional_assets/style.css");
+	document.getElementsByTagName("head").item(0).appendChild(newlink);
+
+</script>
+<div class="footer_links">
+	<a href="http://dsgnblvd.com/envato/js-animation-svg-globe-markers-logos/1.1.marker-B/globe.html" class="btn">Live preview</a>
+	<a href="http://codecanyon.net/item/animated-svg-globe-with-markers-and-logos/9844557?ref=cesgra" class="btn">Buy this item</a>
+</div>
+<!-- Additional Links code: END -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2176248-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

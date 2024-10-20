@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Color presets / Animated SVG Globe with markers and logos</title>
+	<link href="css/presets.css" rel="stylesheet" />
+	<link href="../assets/edge-animation-handler.css" rel="stylesheet" />
+	<script> var id = 8; </script>
+	<script type="text/javascript" src="../assets/edge-navigation.js"></script>
+
+<script>
+
+// var globe_current = parseInt( getUrlVars()["colors"] );
+w_url = window.location.href;
+var globe_current = w_url.split('#')[1];
+
+if (!globe_current) {
+	globe_current = 1;
+}
+
+
+var arr_current;
+var doc_title = document.title;
+
+var globe_urls = [
+  'all/01.white-blue/globe.html',
+  'all/02.blue-green/globe.html',
+  'all/03.blue/globe.html',
+  'all/04.green/globe.html',
+  'all/05.blue-yellow/globe.html',
+  'all/06.lemonlight-orange/globe.html',
+  'all/07.black-yellow/globe.html',
+  'all/08.darkblue-yellow/globe.html',
+  'all/09.grey/globe.html',
+  'all/10.blue-white/globe.html',
+  'all/11.flat/globe.html',
+  'all/12.stripes/globe.html',
+  'all/13.red-white-flat/globe.html',
+  'all/14.galaxy-shine/globe.html',
+  'all/15.blue-transparent/globe.html',
+  'all/16.green-blue-stroke/globe.html',
+  'all/17.blue-flat-stroke/globe.html',
+  'all/18.pale-flat-stroke/globe.html',
+  'all/19.yellow-blue-flat-long-shadow/globe.html',
+  'all/20.blue-white-flat-long-shadow/globe.html',
+  'all/21.blue-purple-gradient/globe.html',
+  'all/22.blue-bronze-gradient/globe.html',
+  'all/23.electric-green/globe.html',
+  'all/24.darkblue-electric-green/globe.html',
+  'all/25.yellow-black-foggy/globe.html',
+  'all/26.white-bronze-gradient/globe.html',
+  'all/27.white-blue-additional-shadows/globe.html',
+  'all/28.blue-additional-shadows/globe.html',
+  'all/29.flat-eco/globe.html',
+  'all/30.gold/globe.html',
+  'all/31.blue-inner-light/globe.html',
+  'all/32.red-stroke-flat-long-shadow/globe.html',
+  'all/33.red-cherry-flat-long-shadow/globe.html'
+];
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+function set_iframe() {
+  var n = document.getElementById('nmbr');
+  var f = document.getElementById('frame');
+  var className_ = "current";
+  // var el = t;
+
+  arr_current = globe_current - 1;
+
+  f.src = globe_urls[arr_current];
+  n.innerHTML = globe_current; 
+  document.title = "#" + globe_current + " / " + doc_title;
+
+  el = document.querySelectorAll('button')[arr_current];
+
+  // remove class
+  var elements = document.querySelectorAll('button.'+className_);
+  for (i = 0; i < elements.length; ++i) {
+    elements[i].classList.remove(className_);
+  }
+
+  // add class
+  if (el.classList) {
+    el.classList.add(className_);}
+  else {
+    el.className += ' ' + className_;}
+
+// url
+parent.location.hash = globe_current;
+w_url = window.location.href;
+// videoId = w_url.split('colors=')[1].substring(0,11);
+// videoId = w_url.split('colors=')[1];
+// alert(videoId);
+// window.history.pushState("object or string", "Title", "/new-url"); 
+
+
+
+}
+
+window.onload = set_iframe;
+
+</script>
+
+</head>
+<body>
+<div class="container">
+
+  <h2>Color presets #<span id="nmbr"></span></h2>
+  <h3 style="margin-top: 0;">With random intro effects</h3>
+
+	<iframe id="frame" src="all/02.blue-green/globe.html" title="globe" frameborder="0" scrolling="no" seamless="seamless"></iframe>
+    <p>Navigate through presets:</p>
+	<div class="buttons">
+		<button type="button" class="btn1" onclick="globe_current=1; set_iframe();" title="01.white-blue">1</button>
+		<button type="button" class="btn2" onclick="globe_current=2; set_iframe();" title="02.blue-green">2</button>
+		<button type="button" class="btn3" onclick="globe_current=3; set_iframe();" title="03.blue">3</button>
+		<button type="button" class="btn4" onclick="globe_current=4; set_iframe();" title="04.green">4</button>
+		<button type="button" class="btn5" onclick="globe_current=5; set_iframe();" title="05.blue-yellow">5</button>
+		<button type="button" class="btn6" onclick="globe_current=6; set_iframe();" title="06.lemonlight-orange">6</button>
+		<button type="button" class="btn7" onclick="globe_current=7; set_iframe();" title="07.black-yellow">7</button>
+		<button type="button" class="btn8" onclick="globe_current=8; set_iframe();" title="08.darkblue-yellow">8</button>
+		<button type="button" class="btn9" onclick="globe_current=9; set_iframe();" title="09.grey">9</button>
+		<button type="button" class="btn10" onclick="globe_current=10; set_iframe();" title="10.blue-white">10</button>
+		<button type="button" class="btn11" onclick="globe_current=11; set_iframe();" title="11.flat">11</button>
+		<button type="button" class="btn12" onclick="globe_current=12; set_iframe();" title="12.stripes">12</button>
+		<button type="button" class="btn13" onclick="globe_current=13; set_iframe();" title="13.red-white-flat">13</button>
+		<button type="button" class="btn14" onclick="globe_current=14; set_iframe();" title="14.galaxy-shine">14</button>
+		<button type="button" class="btn15" onclick="globe_current=15; set_iframe();" title="15.blue-transparent">15</button>
+		<button type="button" class="btn16" onclick="globe_current=16; set_iframe();" title="16.green-blue-stroke">16</button>
+		<button type="button" class="btn17" onclick="globe_current=17; set_iframe();" title="17.blue-flat-stroke">17</button>
+		<button type="button" class="btn18" onclick="globe_current=18; set_iframe();" title="18.pale-flat-stroke">18</button>
+		<button type="button" class="btn19" onclick="globe_current=19; set_iframe();" title="19.yellow-blue-flat-long-shadow">19</button>
+		<button type="button" class="btn20" onclick="globe_current=20; set_iframe();" title="20.blue-white-flat-long-shadow">20</button>
+		<button type="button" class="btn21" onclick="globe_current=21; set_iframe();" title="21.blue-purple-gradient">21</button>
+		<button type="button" class="btn22" onclick="globe_current=22; set_iframe();" title="22.blue-bronze-gradient">22</button>
+		<button type="button" class="btn23" onclick="globe_current=23; set_iframe();" title="23.electric-green">23</button>
+		<button type="button" class="btn24" onclick="globe_current=24; set_iframe();" title="24.darkblue-electric-green">24</button>
+		<button type="button" class="btn25" onclick="globe_current=25; set_iframe();" title="25.yellow-black-foggy">25</button>
+		<button type="button" class="btn26" onclick="globe_current=26; set_iframe();" title="26.white-bronze-gradient">26</button>
+		<button type="button" class="btn27" onclick="globe_current=27; set_iframe();" title="27.white-blue-additional-shadows">27</button>
+		<button type="button" class="btn28" onclick="globe_current=28; set_iframe();" title="28.blue-additional-shadows">28</button>
+		<button type="button" class="btn29" onclick="globe_current=29; set_iframe();" title="29.flat-eco">29</button>
+		<button type="button" class="btn30" onclick="globe_current=30; set_iframe();" title="30.gold">30</button>
+		<button type="button" class="btn31" onclick="globe_current=31; set_iframe();" title="31.blue-inner-light">31</button>
+		<button type="button" class="btn32" onclick="globe_current=32; set_iframe();" title="32.red-stroke-flat-long-shadow">32</button>
+		<button type="button" class="btn33" onclick="globe_current=33; set_iframe();" title="33.red-cherry-flat-long-shadow">33</button>
+	</div>
+
+    <p><a href="#" onclick="history.go(-1);return false;">Back</a></p>
+
+
+
+<!--
+  <p class="btn">
+		<button type="button" id="toggle_animation">Toggle</button>
+	</p>
+-->
+
+
+</div>
+
+
+
+
+<!-- controls -->
+<div class="controls">
+
+  <script> build_navigation(); </script>
+
+    <div class="title">
+      <p><strong>Animated SVG Globe with markers and logos</strong></p>
+      <p class="sub">JavaScript animation.<script>document.write("  "+id+"/8");</script></p>
+    </div>
+    <div class="buy"><a href="http://codecanyon.net/item/animated-svg-globe-with-markers-and-logos/9844557?ref=cesgra" class="button" target="_blank">Buy this item</a></div>
+  <div class="info">
+    You can easily: 
+    <ul>
+      <li><a href="../worldmap_color_presets/index.html">change colors</a>, visibility, opacity of globe elements</li>
+      <li>change duration, order, easing of animation</li>
+      <li>resize the globe</li>
+    </ul>
+  </div>
+
+</div>
+
+<script> build_next_nav(); </script>
+
+<!-- <script type="text/javascript" src="../assets/edge-animation-handler.js"></script> -->
+<!-- <script type="text/javascript" src="../assets/jscolor/jscolor.js"></script> -->
+<!-- controls END -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2176248-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
