@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Double text lines Banner templates / Adobe Edge animation</title>
+  <link rel="stylesheet" href="readme-files/css/style.css" />
+</head>
+<body>
+
+<div class="header-c">
+<div class="header">
+  <img src="readme-files/img/144px.png" alt="" class="left" />
+  <h1>Double text lines Banner templates</h1>
+  <h3>Adobe Edge animation</h3>
+</div>
+</div>
+
+<div class="main">
+<!-- section -->
+<div class="toc">
+  <p><a href="#description">Description</a></p>
+	<p><a href="#sequence">Banner animation sequence</a></p>
+	<p><a href="#variables-explained">Javascript variables explained</a></p>
+  <p><a href="#mime">SVG files require proper web server MIME-type configuration</a></p>
+
+</div>
+
+
+
+
+<!-- section -->
+<div class="description">
+<h2 id="description">Description</h2>
+<p>Animated HTML5 (Adobe Edge) Banner templates in 4 formats:</p>
+
+<ul>
+	<li>Medium Rectangle <strong>300x250</strong></li>
+	<li>Rectangle <strong>180x150</strong></li>
+	<li>Leaderboard <strong>728x90</strong></li>
+	<li>Wide skyscraper <strong>160x600</strong></li>
+</ul>
+    
+<p>You can easily change:</p>
+<ul>
+	<li>texts</li>
+	<li>font family and size</li>
+	<li>colors</li>
+	<li>URL</li>
+	<li>logo</li>
+</ul>
+
+<p>Included:</p>
+<ul>
+  <li>Edge Animate files (.an, JS, HTML)</li>
+  <li>Edge Animate templates (.antmpl)</li>
+	<li>Documentation</li>
+</ul>
+</div>
+
+
+<!-- section -->
+<h2 id="sequence">Banner animation sequence</h2>
+
+<p><strong>#1. Logo</strong></p>
+<p>For the support of high DPI displays, the logo is in SVG format, but you may replace it with any bitmap image (PNG, JPG or GIF).</p>
+<p><img src="readme-files/img/seq1.png" alt="" /></p>
+
+<p><strong>#2. Looped texts</strong></p>
+<p>These texts (top and bottom) are defined with Javascript in the Array of variables named <code>looped_texts</code>. You may add/remove any number of Array elements as you need, in the templates 5 array elements are used:</p>
+<p><img src="readme-files/img/looped-texts.png" alt="" /></p>
+
+<p class="img-seq">
+	<img src="readme-files/img/seq2.png" alt="" /><img src="readme-files/img/seq3.png" alt="" /><img src="readme-files/img/seq4.png" alt="" /><img src="readme-files/img/seq5.png" alt="" /><img src="readme-files/img/seq6.png" alt="" />
+</p>
+
+<p><strong>#3. Call to action</strong></p>
+<p>After the so-called "Looped texts" animation ends, the final stage of the banner with call-to-action button appears:</p>
+<p><img src="readme-files/img/seq7.png" alt="" /></p>
+
+<p>After that the banner animation starts from beginning.</p>
+
+
+
+
+
+<!-- section -->
+<h2 id="variables-explained">Javascript variables explained</h2>
+
+<p><img src="readme-files/img/vars.png" alt="" /></p>
+
+<div class="bq vars">
+
+  <h3>default_font_size <code>String</code></h3>
+  <p>Default looped texts' font size. For example <code>"28px"</code>. You may set different font sizes for individual texts in array <code>looped_texts</code>.</p>
+
+  <h3>stage_color <code>String</code></h3>
+  <p>Banner (Stage) background color. For example <code>"#34495e"</code></p>
+
+  <h3>frame_color <code>String</code></h3>
+  <p>Frame of the banner. By default this variable equals to <code>stage_color</code> (the same color as banner background) so it's invisible. To use other color, change <code>stage_color</code> to the String with HEX color for example <code>"#007bb4"</code></p>
+
+  <h3>button_color <code>String</code></h3>
+  <p>Call to action button color. For example <code>"#ef8e5b"</code></p>
+
+  <h3>text_top <code>String</code></h3>
+  <p>The color of top looped texts. For example <code>"#fff"</code></p>
+
+  <h3>text_bottom <code>String</code></h3>
+  <p>The color of bottom looped texts. For example <code>"#fc0"</code></p>
+
+</div>
+
+
+<div class="bq vars">
+
+  <h3>url <code>String</code></h3>
+	<p>URL the browser opens after the click. For example: <code>"http://www.example.com?link1"</code></p>
+
+  <h3>target <code>String</code></h3>
+  <p>Target attribute specifies where to open the link. Values: <code>"_blank"</code>, <code>"_self"</code>, <code>"_parent"</code> or <code>"_top"</code></p>
+
+</div>
+
+
+<div class="bq vars">
+  <h3>looped_texts <code>Array</code></h3>
+	<p>Settings for individual looped texts:</p>
+	<ul>
+		<li><strong>top</strong> - top text</li>
+		<li><strong>bottom</strong> - bottom text</li>
+		<li><strong>top_fs</strong> - font size of the top text</li>
+		<li><strong>bottom_fs</strong> - font size of the bottom text</li>
+		<li><strong>margin_top</strong> - edit vertical position of both top and bottom texts if needed</li>
+	</ul>
+</div>
+
+<p><img src="readme-files/img/looped-texts2.png" alt="" /></p>
+
+
+
+
+<!-- section -->
+<h2 id="mime">SVG files require proper web server MIME-type configuration</h2>
+<p>If SVG files don't show up on web, the server doesn't serve MIME types for SVG files correctly. You should configure server appropriately. There are several ways to do it, depending upon the server type, and your access to server settings.</p>
+
+<p>For example, in <strong>Apache server</strong> it's done by editing <code>.htaccess</code> configuration file that is hidden - make sure your FTP client shows hidden files. If your server does not have such a file, create a file and name it “.htaccess”, and associate the SVG file extensions with the correct MIME Type; if the file already exists, you can simply add the correct entries to it. The particular line you should add are:</p>
+
+<blockquote>
+  <code>AddType image/svg+xml svg</code><br />
+</blockquote>
+<p>The .htaccess file should be placed in the directory that contains the SVG file, or any parent directory. </p>
+
+<p>More on this subject: <a href="http://www.w3.org/services/svg-server/">http://www.w3.org/services/svg-server/</a></p>
+
+
+
+
+
+<div class="footer">
+  <h2>Thank you!</h2>
+  <p>Thank you for purchasing my files. If you have any questions that are beyond the scope of this documentation, please feel free to email via my user page <a href="http://codecanyon.net/user/cesgra">contact form</a>. Thanks so much!</p>
+  <p class="credits">Created: December 30, 2014 by cesgra. Email: <a href="mailto:cz.cesgra@yahoo.co.uk">cz.cesgra@yahoo.co.uk</a></p>
+</div>
+
+</div>
+
+<!-- Additional Links code -->
+<script>
+
+	var newlink = document.createElement("link");
+	newlink.setAttribute("rel", "stylesheet");
+	newlink.setAttribute("type", "text/css");
+	newlink.setAttribute("href", "http://dsgnblvd.com/envato/additional_assets/style.css");
+	document.getElementsByTagName("head").item(0).appendChild(newlink);
+
+</script>
+<div class="footer_links">
+	<a href="http://dsgnblvd.com/envato/edge-animate-two-text-lines-banners/1.300x250/banner_300x250.html" class="btn">Live preview</a>
+	<a href="http://codecanyon.net/item/double-text-lines-banner-templates/9940367?ref=cesgra" class="btn">Buy this item</a>
+</div>
+<!-- Additional Links code: END -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2176248-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
